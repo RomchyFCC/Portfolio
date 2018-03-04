@@ -24,7 +24,7 @@ h1, h2, h3 {
 .social a {
   padding: 15px;
   display: inline-block;
-  color: #212121;
+  color: #FFFFFF;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -57,7 +57,7 @@ nav img:hover {
 .hero {
   height: 100vh;
   width: 100%;
-  background-image: url("../public/pattern.svg"), linear-gradient(#2196f3, #BBDEFB);
+  background-image: url("../public/pattern.svg"), linear-gradient(#757575, #212121);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "." "title" "social" "." "next";
@@ -77,7 +77,8 @@ nav img:hover {
 }
 
 .hero .social span {
-  background: linear-gradient(180deg, #2196f3, #536DFE);
+  background-image: -webkit-linear-gradient(#E0F8F7, #585858, #fff);
+  background-image: linear-gradient(#E0F8F7, #585858, #fff);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -87,8 +88,12 @@ nav img:hover {
   grid-area: next;
 }
 
-.hero .next a {
-  color: #1976D2;
+.hero .next span {
+  background-image: -webkit-linear-gradient(left, #E0F8F7, #585858, #E0F8F7);
+  background-image: linear-gradient(to right, #E0F8F7, #585858, #E0F8F7);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .title {
@@ -100,7 +105,6 @@ nav img:hover {
 
 .title h1 {
   color: #FFFFFF;
-  text-shadow: 0 2px #757575;
   font-size: 5rem;
   border-bottom: 5px solid #212121;
   padding: 0 25px;
@@ -127,6 +131,7 @@ nav img:hover {
 }
 
 .about {
+  box-shadow: 0 0 20px 5px #212121 inset;
   background: #FFFFFF;
   text-align: center;
   font-size: 1.5rem;
@@ -153,9 +158,11 @@ nav img:hover {
 
 .projects {
   width: 100%;
-  border-bottom: 3px solid #BDBDBD;
   padding: 30px;
+  padding-bottom: 83px;
   text-align: center;
+  background: url("../public/pattern.svg"), #212121;
+  color: #fff;
 }
 
 .projects h3 {
@@ -165,7 +172,7 @@ nav img:hover {
 .projects .stack {
   width: 80%;
   height: 400px;
-  border: 1px solid #BDBDBD;
+  background: #fff;
   margin: 0 auto;
 }
 
@@ -177,12 +184,13 @@ nav img:hover {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
+  color: #212121;
 }
 
 .elements .header {
   position: relative;
+  background: #BDBDBD;
   height: 20px;
-  border-bottom: 1px solid #BDBDBD;
   display: grid;
   grid-template-columns: 1fr auto auto 1fr;
   grid-gap: 20px;
@@ -229,11 +237,12 @@ nav img:hover {
 }
 
 .close {
-  width: 80%;
-  margin: 0 auto;
+  box-shadow: 0 0 20px 5px #212121 inset;
 }
 
 .close .files {
+  width: 80%;
+  margin: 0 auto;
   padding: 20px 0;
 }
 
@@ -242,13 +251,16 @@ nav img:hover {
 }
 
 .close .direct {
+  width: 80%;
+  margin: 0 auto;
   padding-bottom: 20px;
 }
 
 .contact {
   width: 100%;
-  border-top: 3px solid #BDBDBD;
+  background: url("../public/pattern.svg"), #212121;
   padding: 20px 0;
+  color: #FFFFFF;
 }
 
 .contact h3 {
@@ -290,10 +302,10 @@ nav img:hover {
 
 .footer {
   padding: 10px 0;
-  border-top: 1px solid #1976D2;
+  border-top: 1px solid #FFFFFF;
   display: grid;
-  justify-content: center;
   text-align: center;
-  grid-gap: 10px;
+  background: #212121;
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=style.css.map */

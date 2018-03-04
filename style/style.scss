@@ -7,7 +7,6 @@ $sec-text: #757575;
 $divider: #BDBDBD;
 $text: #FFFFFF;
 $shade: rgba(2,2,2,0.3);
-$gradient: linear-gradient(270deg, #f93d66, #6d47d9);
 
 
 $lobster: 'Lobster', cursive, 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
@@ -38,7 +37,7 @@ h1, h2, h3 {
   a {
     padding: 15px;
     display: inline-block;
-    color: $prim-text;
+    color: $text;
     text-transform: uppercase;
     text-decoration: none;
   }
@@ -69,7 +68,7 @@ nav {
 .hero {
   height: 100vh;
   width: 100%;
-  background-image: url("../public/pattern.svg"), linear-gradient($prim-color, $light-prim);
+  background-image: url("../public/pattern.svg"), linear-gradient($sec-text, $prim-text);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: 
@@ -89,7 +88,8 @@ nav {
       padding: 0 20px;
     }
     span {
-      background: linear-gradient(180deg, $prim-color, $accent);
+      background-image: -webkit-linear-gradient(#E0F8F7, #585858, #fff);
+      background-image:         linear-gradient(#E0F8F7, #585858, #fff);
       color:transparent;
       -webkit-background-clip: text;
       background-clip: text;
@@ -97,8 +97,12 @@ nav {
   }
   .next {
     grid-area: next;
-    a {
-      color: $dark-prim;
+    span {
+      background-image: -webkit-linear-gradient(left, #E0F8F7, #585858, #E0F8F7);
+      background-image:         linear-gradient(to right, #E0F8F7, #585858, #E0F8F7);
+      color:transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
     }
   }
 }
@@ -110,7 +114,6 @@ nav {
   align-content: center;
   h1 {
     color: $text;
-    text-shadow: 0 2px $sec-text;
     font-size: 5rem;
     border-bottom: 5px solid $prim-text;
     padding: 0 25px;
@@ -138,6 +141,7 @@ nav {
 }
 
 .about {
+  box-shadow: 0 0 20px 5px $prim-text inset;
   background: $text;
   text-align: center;
   font-size: 1.5rem;
@@ -160,16 +164,19 @@ nav {
 
 .projects {
   width: 100%;
-  border-bottom: 3px solid $divider;
   padding: 30px;
+  padding-bottom: 83px;
   text-align: center;
+  background: url("../public/pattern.svg"), rgb(33, 33, 33);
+  color: #fff;
   h3 {
     padding-bottom: 30px;
+    
   }
   .stack {
     width: 80%;
     height: 400px;
-    border: 1px solid $divider;
+    background: #fff;
     margin: 0 auto;
     * {
       width: 100%;
@@ -181,10 +188,12 @@ nav {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
+  color: $prim-text;
   .header {
     position: relative;
+    background: $divider;
+    
     height: 20px;
-    border-bottom: 1px solid $divider;
     display: grid;
     grid-template-columns: 1fr auto auto 1fr;
     grid-gap: 20px;
@@ -227,23 +236,28 @@ nav {
 }
 
 .close {
-  width: 80%;
-  margin: 0 auto;
+  box-shadow: 0 0 20px 5px $prim-text inset;
+  
   .files {
+    width: 80%;
+    margin: 0 auto;
     padding: 20px 0;
     h3 {
       padding-bottom: 20px;
     }
   }
   .direct {
+    width: 80%;
+    margin: 0 auto;
     padding-bottom: 20px;
   }
 }
 
 .contact {
   width: 100%;
-  border-top: 3px solid $divider;
+  background: url("../public/pattern.svg"), rgb(33, 33, 33);
   padding: 20px 0;
+  color: $text;
   h3 {
     text-align: center;
     padding-bottom: 20px;
@@ -279,9 +293,9 @@ nav {
 
 .footer {
   padding: 10px 0;
-  border-top: 1px solid $dark-prim;
+  border-top: 1px solid $text;
   display: grid;
-  justify-content: center;
   text-align: center;
-  grid-gap: 10px;
+  background: $prim-text;
+  color: $text;
 }
