@@ -105,31 +105,32 @@
         <form class="form">
           <div class="field">
             <p class="name">Name:</p>
-            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="name" placeholder="Name:">
           </div>
           <div class="field">
             <p class="company">Company(optional):</p>
-            <input type="text" name="company" placeholder="Company">
+            <input type="text" name="company" placeholder="Company(optional):">
           </div>
           <div class="field">
 						<p class="email">E-mail address:</p>
-            <input type="email" name="email" placeholder="E-mail address">
+            <input type="email" name="email" placeholder="E-mail address:">
           </div>
           <div class="field type-div">
-            <p class="type">Type:
+            <p class="type">Type:</p>
+            <span>
               <span>
-                <input type="radio" name="type" value="casual" checked>Casual
-                <input type="radio" name="type" value="opportunity">Job Opportunity
+                <input type="radio" name="type" value="casual" checked>&ThickSpace;Casual
               </span>
-            </p>
+              <span>
+                <input type="radio" name="type" value="opportunity">&ThickSpace;Job Opportunity 
+              </span>
+            </span>
           </div>
-          <div class="field msg-div">
+          <div class="msg-div">
 						<p class="msg">Message:</p>
-            <textarea name="comment" placeholder="Message"></textarea>
+            <textarea name="comment" placeholder="Message:"></textarea>
           </div>
-          <div class="field button">
-            <input id="button" type="submit" name="send" value="Send">
-          </div>
+          <input id="button" type="submit" name="send" value="Send">
         </form>
       </div><!-- End of .contact -->
       <div class="footer">
