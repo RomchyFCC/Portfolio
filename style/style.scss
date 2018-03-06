@@ -1,15 +1,10 @@
-$prim-text: #212121;
-$dark-prim: #1976D2;
-$accent: #536DFE;
-$light-prim: #BBDEFB;
-$prim-color: #2196f3;
-$sec-text: #757575;
-$divider: #BDBDBD;
-$text: #FFFFFF;
-$shade: rgba(2,2,2,0.3);
-
-
-$lobster: 'Lobster', cursive, 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+$text-prim: #212121;
+$text-sec: #FFFFFF;
+$spice: #E0F8F7;
+$gray-prim: #757575;
+$gray-sec: #585858;
+$accent: #2196f3;
+$shade: rgba(0,0,0,0.3);
 $roboto: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
 
 *, *::before, *::after {
@@ -22,11 +17,16 @@ body {
   font-family: $roboto;
   font-size: 16px;
   background-image: url("../public/pattern.svg");
+  min-width: 360px;
 }
 
 
 h1, h2, h3 {
   text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
 }
 
 .social {
@@ -37,9 +37,9 @@ h1, h2, h3 {
   a {
     padding: 15px;
     display: inline-block;
-    color: $text;
+    color: $text-sec;
     text-transform: uppercase;
-    text-decoration: none;
+    transition: 0.3s;
   }
 }
 
@@ -52,23 +52,25 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  border-bottom: 1px solid $text-prim;
   & > a {
     width: 50px;
   }
   ul.social {
     justify-self: flex-end;
     font-weight: 700;
-  }
-  img:hover {
-    background-color: $shade;
-    border-radius: 100%;
+    a:hover{
+      text-decoration: underline;
+      transform: scale(1.2);
+    }
   }
 }
 
 .hero {
+  min-height: 500px;
   height: 100vh;
   width: 100%;
-  background-image: url("../public/pattern.svg"), linear-gradient($sec-text, $prim-text);
+  background-image: url("../public/pattern.svg"), linear-gradient($gray-prim, $text-prim);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: 
@@ -88,21 +90,27 @@ nav {
       padding: 0 20px;
     }
     span {
-      background-image: -webkit-linear-gradient(#E0F8F7, #585858, #fff);
-      background-image:         linear-gradient(#E0F8F7, #585858, #fff);
-      color:transparent;
+      background-image: -webkit-linear-gradient($spice, $gray-sec, $text-sec);
+      background-image:         linear-gradient($spice, $gray-sec, $text-sec);
+      color: transparent;
       -webkit-background-clip: text;
       background-clip: text;
+      &:hover {
+        color: $text-sec;
+      }
     }
   }
   .next {
     grid-area: next;
     span {
-      background-image: -webkit-linear-gradient(left, #E0F8F7, #585858, #E0F8F7);
-      background-image:         linear-gradient(to right, #E0F8F7, #585858, #E0F8F7);
-      color:transparent;
+      background-image: -webkit-linear-gradient(left, $spice, $gray-sec, $spice);
+      background-image:         linear-gradient(to right, $spice, $gray-sec, $spice);
+      color: transparent;
       -webkit-background-clip: text;
       background-clip: text;
+      &:hover {
+        color: $text-sec;
+      }
     }
   }
 }
@@ -113,17 +121,16 @@ nav {
   justify-items: center;
   align-content: center;
   h1 {
-    color: $text;
+    color: $text-sec;
     font-size: 5rem;
-    border-bottom: 5px solid $prim-text;
+    border-bottom: 5px solid $text-prim;
     padding: 0 25px;
   }
   h3 {
     font-size: 2.7rem;
     letter-spacing: 7px;
     padding-top: 10px;
-    color: $text;
-    text-shadow: 0 2px $sec-text;
+    color: $text-sec;
   }
 }
 
@@ -136,13 +143,13 @@ nav {
   justify-items: center;
   align-content: center;
   a {
-    color: $prim-text;
+    color: $text-prim;
   }
 }
 
 .about {
-  box-shadow: 0 0 20px 5px $prim-text inset;
-  background: $text;
+  box-shadow: 0 0 20px 5px $text-prim inset;
+  background: $text-sec;
   text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -172,7 +179,7 @@ nav {
   padding-top: 50px;
   text-align: center;
   background: url("../public/pattern.svg"), rgb(33, 33, 33);
-  color: #fff;
+  color: $text-sec;
   
   h3 {
     padding-bottom: 20px;
@@ -183,9 +190,34 @@ nav {
     width: 80%;
     margin: 0 auto;
     height: 400px;
-    background: #fff;
+    overflow: hidden;
+    background: $text-sec;
     * {
       width: 100%;
+    }
+  }
+}
+
+.stack {
+  height: 100%;
+  color: $text-prim;
+  header {
+    background: $accent;
+    color: $text-sec;
+    height: 30px;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    i {
+      display: inline;
+    }
+    a {
+      color: $text-sec;
+    }
+    a:hover {
+      background: rgba($text-sec, 0.2);
     }
   }
 }
@@ -193,35 +225,21 @@ nav {
 .elements {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
-  color: $prim-text;
-  .header {
-    position: relative;
-    background: $divider;
-    
-    height: 20px;
-    display: grid;
-    grid-template-columns: 1fr auto auto 1fr;
-    grid-gap: 20px;
-    align-items: center;
-    p {
-      grid-column: 2/3;
-    }
-  }
+  height: 370px;
   .element {
     width: 20%;
     margin: 25px 2.5%;
-    border: 1px solid $accent;
-    height: 330px;
+    height: 320px;
     overflow: hidden;
+    border: 1px solid $accent;
   }
 }
 .info-box {
-  position: relative;
-  top: 280px;
+  top: 0px; /*270*/
   display: flex;
   flex-wrap: wrap;
   height: 100%;
+  align-items: center;
   * {
     padding: 10px;
   }
@@ -229,20 +247,21 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
-    justify-content: center;
+    a {
+      padding: 5px;
+      background: $accent;
+      color: $text-sec;
+      cursor: pointer;
+      &:hover {
+        background: rgba($accent, 0.8);
+        text-decoration: underline;
+      }
+    }
   }
 }
 
-#source {
-  grid-column: 1/2;
-}
-
-#demo {
-  grid-column: 2/3;
-}
-
 .close {
-  box-shadow: 0 0 20px 5px $prim-text inset;
+  box-shadow: 0 0 20px 5px $text-prim inset;
   padding: 50px 0;
   text-align: center;
   font-size: 1.5rem;
@@ -253,6 +272,19 @@ nav {
     padding-bottom: 50px;
     h3 {
       padding-bottom: 20px;
+    }
+    a {
+      display: inline-block;
+      background: $accent;
+      padding: 5px 10px;
+      color: $text-sec;
+      margin: 0 10px;
+      margin-top: 20px;
+      border-radius: 5px;
+      &:hover {
+        background: rgba($accent, 0.8);
+        text-decoration: underline;
+      }
     }
   }
   .direct {
@@ -265,7 +297,7 @@ nav {
   width: 100%;
   background: url("../public/pattern.svg"), rgb(33, 33, 33);
   padding: 50px 0;
-  color: $text;
+  color: $text-sec;
   font-size: 1.5rem;
   line-height: 2rem;
   h3 {
@@ -294,12 +326,15 @@ nav {
     grid-template-rows: 25px 50px;
     grid-gap: 10px;
   }
-  .type-div>span {
+  
+  .type-div div {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    justify-items: space-between;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     text-align: center;
+    span > * {
+      cursor: pointer;
+    }
   }
   .msg-div{
     grid-column: 1/3;
@@ -310,18 +345,23 @@ nav {
     justify-self: end;
     grid-column: 2/3;
     padding: 5px;
-    background: $prim-color;
+    background: $accent;
     border: none;
+    cursor: pointer;
+    &:hover {
+      background: rgba($accent, 0.8);
+      text-decoration: underline;
+    }
   }
   input, textarea, input::placeholder, textarea::placeholder {
     font-size: 1.5rem;
     line-height: 2rem;
     padding-left: 5px;
-    color: $text;
+    color: $text-sec;
   }
   input, textarea {
     border: none;
-    border-bottom: 2px solid $prim-color;
+    border-bottom: 2px solid $accent;
     background: $shade;
   }
   textarea {
@@ -334,14 +374,145 @@ nav {
   textarea:focus, input:focus {
     outline: none;
   }
-  
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"] ~ span {
+    padding: 10px;
+    &:hover {
+      border: 2px solid rgba($accent, 0.3);
+    }
+  }
 }
 
 .footer {
   padding: 10px 0;
-  border-top: 1px solid $text;
+  border-top: 1px solid $text-sec;
   display: grid;
   text-align: center;
-  background: $prim-text;
-  color: $text;
+  background: $text-prim;
+  color: $text-sec;
+}
+
+.highlight {
+  transition: all 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border: 2px solid $accent;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1080px) {
+  .elements {
+    overflow-y: scroll;
+    .element {
+      
+      width: 30%;
+      margin: 25px (10%/6);
+    }
+  }
+  .form .type-div div {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+@media screen and (max-width: 970px) {
+  .close p, .close a, .about p {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+  .title {
+    h1 {
+      font-size: 4rem;
+    }
+    h3 {
+      letter-spacing: 4px;
+      font-size: 2.4rem;
+    }
+  }
+  .hero .social span {
+    font-size: 3.2rem;
+  }
+}
+@media screen and (max-width: 840px) {
+  .close p, .close a, .about p {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  .about p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .elements {
+    .element {
+      width: 45%;
+      margin: 25px 2.5%;
+    }
+  }
+  .form {
+    grid-template-columns: 1fr;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    grid-gap: 0;
+    & > *, & #button{
+      grid-column: 1/2;
+      width: 100%;
+    }
+    .type-div div {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .title {
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      letter-spacing: 2px;
+      font-size: 1.9rem;
+    }
+  }
+  .hero .social span {
+    font-size: 2.7rem;
+  }
+  .about {
+    .toolkit {
+      .social {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .elements {
+    .element {
+      width: 90%;
+      margin: 25px 5%;
+    }
+  }
+  .form {
+    .type-div div {
+      grid-template-columns: 1.5fr 2fr;
+    }
+  }
+  .title {
+    h1 {
+      font-size: 2rem;
+    }
+    h3 {
+      letter-spacing: 0;
+      font-size: 1.4rem;
+    }
+  }
+  .hero .social {
+    li {
+      padding: 0 5px;
+    }
+  }
+  .contact .form, .form input, .form textarea, .form input::placeholder, .form textarea::placeholder{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }

@@ -21,10 +21,9 @@
           <img src="./public/logo.svg" width="50" height="50">
         </a>
         <ul class="social">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Portfolio</a></li>
+          <li><a href="#aboutAnchor">About</a></li>
+          <li><a href="#projectsAnchor">Projects</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#">Endorsments</a></li>
         </ul>
       </nav>
 
@@ -40,8 +39,9 @@
           <li><a href="https://www.linkedin.com/in/romanstruna/" target="_blank"><span class="fab fa-linkedin fa-4x"></span></a></li>
         </ul>
         <div class="next">
-          <a href="https://www.linkedin.com/in/romanstruna/" target="_blank"><span class="fas fa-caret-down fa-5x"></span></a>
+          <a href="#aboutAnchor"><span class="fas fa-caret-down fa-5x"></span></a>
         </div>
+        <div id="aboutAnchor"></div>
       </div><!-- End of .hero -->
       <section class="about">
         <article class="summary">
@@ -61,14 +61,15 @@
             <li><img src="./public/github.svg" height="75" width="75" alt="github logo"></li>
           </ul>
         </article><!-- End of .toolkit -->
+        <div id="projectsAnchor"></div>
       </section><!-- End of .about -->
       <div class="projects">
         <h3>Projects</h3>
         <div class="stack">
+          <header class="header">
+            <a href="#">Front-End Projects <i class="fas fa-caret-down"></i></a>
+          </header>
           <div class="elements">
-            <header class="header">
-                <p>Front-End Projects </p><span class="fas fa-caret-down"></span>
-            </header>
             <div class="element">
               <div class="info-box">
                 <h5>Name</h5>
@@ -80,8 +81,56 @@
                   <li>JS</li>
                 </ul>
                 <div class="buttons">
-                  <button id="source">Source Code</button>
-                  <button id="demo">Live Demo</button>
+                  <a href="#" class="source">Source</a>
+                  <a href="#" class="demo">Demo</a>
+                </div><!-- End of .buttons -->
+              </div><!-- End of .info-box -->
+            </div><!-- End of .element -->
+            <div class="element">
+              <div class="info-box">
+                <h5>Name</h5>
+                <p>Quick summary</p>
+                <h5>Tools:</h5>
+                <ul class="social">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JS</li>
+                </ul>
+                <div class="buttons">
+                  <a href="#" class="source">Source</a>
+                  <a href="#" class="demo">Demo</a>
+                </div><!-- End of .buttons -->
+              </div><!-- End of .info-box -->
+            </div><!-- End of .element -->
+            <div class="element">
+              <div class="info-box">
+                <h5>Name</h5>
+                <p>Quick summary</p>
+                <h5>Tools:</h5>
+                <ul class="social">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JS</li>
+                </ul>
+                <div class="buttons">
+                  <a href="#" class="source">Source</a>
+                  <a href="#" class="demo">Demo</a>
+                </div><!-- End of .buttons -->
+              </div><!-- End of .info-box -->
+            </div><!-- End of .element -->
+            <div class="element">
+              <div class="info-box">
+                <h5>Name</h5>
+                <p>Quick summary</p>
+                <h5>Tools:</h5>
+                <ul class="social">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JS</li>
+                </ul>
+                <div class="buttons">
+                  <a href="#" class="source">Source</a>
+                  <a href="#" class="demo">Demo</a>
                 </div><!-- End of .buttons -->
               </div><!-- End of .info-box -->
             </div><!-- End of .element -->
@@ -91,12 +140,12 @@
       <section class="close">
         <article class="files">
           <h3>Thank you for visiting!</h3>
-          <p>I hope you enjoyed the quick tour. If you wish to know more, click the links below to download my résumé in English or Slovenian language.</p>
-          <i class="far fa-file-pdf" aria-hidden="true"></i><a href="#">English</a>
-          <i class="far fa-file-pdf" aria-hidden="true"></i><a href="#">Slovenian</a>
+          <p>I hope you enjoyed the quick tour. If you wish to know more, click the links below to download my résumé in English or Slovene language.</p>
+          <a href="#"><i class="far fa-file-pdf" aria-hidden="true">&ThickSpace;</i>English</a>
+          <a href="#"><i class="far fa-file-pdf" aria-hidden="true">&ThickSpace;</i>Slovene</a>
         </article>
         <article class="direct">
-          <p>If you would like to start a dialogue you are welcome to use the form below or contact me directly via e-mail.</p>
+          <p>If you would like to start a dialogue you are welcome to use the form below or contact me directly via e-mail attached in the résumé.</p>
           <p>I'm excited to hear from you!</p>
         </article>
       </section><!-- End of .close -->
@@ -105,7 +154,7 @@
         <form class="form">
           <div class="field">
             <p class="name">Name:</p>
-            <input type="text" name="name" placeholder="Name:">
+            <input type="text" name="name" placeholder="Name:" length="30">
           </div>
           <div class="field">
             <p class="company">Company(optional):</p>
@@ -117,14 +166,14 @@
           </div>
           <div class="field type-div">
             <p class="type">Type:</p>
-            <span>
+            <div>
               <span>
-                <input type="radio" name="type" value="casual" checked>&ThickSpace;Casual
+                <input type="radio" name="type" value="Casual" checked><span>Casual</span>
               </span>
               <span>
-                <input type="radio" name="type" value="opportunity">&ThickSpace;Job Opportunity 
+                <input type="radio" name="type" value="Job Opportunity"><span>Job Opportunity</span>
               </span>
-            </span>
+            </div>
           </div>
           <div class="msg-div">
 						<p class="msg">Message:</p>
@@ -138,6 +187,7 @@
         <p>&copy; 2018 <span class="currentYear"></span> <span class="name">Roman</span> <span class="surname">Struna</span></p>
       </div>
     </div><!-- End of .wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>
