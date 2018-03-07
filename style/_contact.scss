@@ -1,0 +1,78 @@
+.contact {
+  @include dark-background;
+  @include font-size(1.5rem, 2rem);
+  width: 100%;
+  padding: 50px 0;
+  color: $text-sec;
+  h3 {
+    padding-bottom: 20px;
+  }
+  form {
+    @include center-content;
+  }
+}
+
+.form {
+  @include grid-dbl-col;
+  grid-gap: 10px;
+  
+  div p {
+    padding-left: 10px;
+    visibility: hidden;
+    position: relative;
+    top: 43px;
+  }
+  .field {
+    display: grid;
+    grid-template-rows: 25px 50px;
+    grid-gap: 10px;
+  }
+  
+  .type-div div {
+    @include grid-dbl-col;
+    align-items: center;
+    span > * {
+      cursor: pointer;
+    }
+  }
+  .msg-div{
+    grid-column: 1/3;
+  }
+  #button {
+    width: 100px;
+    justify-self: end;
+    grid-column: 2/3;
+    padding: 5px;
+    border: none;
+    @include button;
+  }
+  input, textarea, input::placeholder, textarea::placeholder {
+    @include font-size(1.5rem, 2rem);
+    padding-left: 5px;
+    color: $text-sec;
+  }
+  input, textarea {
+    border: none;
+    border-bottom: 2px solid $accent;
+    background: $shade;
+  }
+  textarea {
+    font-family: $roboto;
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding-top: 5px;
+  }
+  textarea:focus, input:focus {
+    outline: none;
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"] ~ span {
+    padding: 10px;
+    &:hover {
+      border: 2px solid rgba($accent, 0.3);
+    }
+  }
+}

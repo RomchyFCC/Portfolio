@@ -1,0 +1,82 @@
+.projects {
+  padding: 100px 0;
+  padding-top: 50px;
+  @include dark-background;
+  color: $text-sec;
+  
+  h3 {
+    padding-bottom: 20px;
+    @include font-size(1.5rem, 2rem);
+  }
+  .stack {
+    @include center-content;
+    height: 400px;
+    overflow: hidden;
+    background: $text-sec;
+    transition: 0.2s;
+    * {
+      width: 100%;
+    }
+  }
+}
+
+.stack {
+  color: $text-prim;
+  header {
+    height: 30px;
+    align-items: center;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid $text-prim;
+    i {
+      display: inline;
+    }
+    p {
+      @include button;
+      height: 100%;
+    }
+  }
+}
+
+.elements {
+  display: flex;
+  flex-wrap: wrap;
+  height: 370px;
+  background: linear-gradient(45deg, $gray-prim, $gray-sec);
+  .element {
+    width: 20%;
+    margin: 25px 2.5%;
+    height: 320px;
+    overflow: hidden;
+    border: 1px solid $text-prim;
+    box-shadow: 0 0 20px 2px $text-prim;
+    &:hover {
+      .info-box {
+        top: 0;
+      }
+    }
+  }
+}
+.info-box {
+  transition: 0.2s;
+  position: relative;
+  top: 260px; /*260*/
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: center;
+  background: rgba($text-sec, 0.5);
+  * {
+    padding: 10px;
+  }
+  .buttons {
+    @include grid-dbl-col;
+    grid-gap: 10px;
+    a {
+      padding: 5px;
+      @include button;
+    }
+  }
+  
+}

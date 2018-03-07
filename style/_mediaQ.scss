@@ -1,0 +1,140 @@
+@media screen and (max-width: 1080px) {
+  .elements {
+    overflow-y: scroll;
+    .element {
+      
+      width: 30%;
+      margin: 25px (10%/6);
+    }
+  }
+  .form .type-div div {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+
+@media screen and (max-width: 970px) {
+  .close p, .close a, .about p {
+    @include font-size(1.3rem, 1.8rem);
+  }
+  .title {
+    h1 {
+      font-size: 4rem;
+    }
+    h3 {
+      letter-spacing: 4px;
+      font-size: 2.4rem;
+    }
+  }
+  .hero .list span {
+    font-size: 3.2rem;
+  }
+}
+
+
+@media screen and (max-width: 840px) {
+  .close p, .close a, .about p {
+    @include font-size(1.1rem, 1.6rem);
+  }
+}
+
+
+@media screen and (max-width: 720px) {
+  .about p {
+    @include font-size(1rem, 1.5rem);
+  }
+  .elements {
+    .element {
+      width: 45%;
+      margin: 25px 2.5%;
+    }
+  }
+  .form {
+    grid-template-columns: 1fr;
+    @include font-size(1.3rem, 1.8rem);
+    grid-gap: 0;
+    & > *, & #button{
+      grid-column: 1/2;
+      width: 100%;
+    }
+    .type-div div {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .title {
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      letter-spacing: 2px;
+      font-size: 1.9rem;
+    }
+  }
+  .hero .list span {
+    font-size: 2.7rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .elements {
+    .element {
+      width: 90%;
+      margin: 25px 5%;
+    }
+  }
+  .form {
+    .type-div div {
+      grid-template-columns: 1.5fr 2fr;
+    }
+  }
+  .title {
+    h1 {
+      font-size: 2rem;
+    }
+    h3 {
+      letter-spacing: 0;
+      font-size: 1.4rem;
+    }
+  }
+  .hero .list {
+    li {
+      padding: 0 5px;
+    }
+  }
+  .contact .form, .form input, .form textarea, .form input::placeholder, .form textarea::placeholder{
+    @include font-size(1rem, 1.5rem);
+  }
+  .normal-nav .list {
+    display: none;
+  }
+  #burger-container {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .title {
+    h1 {
+      font-size: 1.75rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+  .hero .list {
+    li {
+      padding: 0;
+    }
+  }
+  .close .files a {
+    margin: 0;
+    margin-top: 20px;
+  }
+  .form {
+    .type-div div {
+      font-size: 0.9rem;
+    }
+  }
+  .hero .list span {
+    font-size: 2.4rem;
+  }
+}

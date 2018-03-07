@@ -16,34 +16,44 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="wrapper">
-      <nav>
-        <a href="#">
-          <img src="./public/logo.svg" width="50" height="50">
+      <nav class="normal-nav">
+        <a class="linkTo" data-pos="top" href="#top">
+          <img src="./public/logo.svg" width="50" height="50" aria-hidden="true">
         </a>
-        <ul class="social">
-          <li><a href="#aboutAnchor">About</a></li>
-          <li><a href="#projectsAnchor">Projects</a></li>
-          <li><a href="#">Contact</a></li>
+        <ul class="list">
+          <li><a class="linkTo" href="#about">about</a></li>
+          <li><a class="linkTo" href="#projects">projects</a></li>
+          <li><a class="linkTo" href="#contact">contact</a></li>
+        </ul>
+				<div id="burger-container">
+          <div id="burger">
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+          </div>
+        </div>
+				<ul class="flex-nav">
+					<li><a class="linkTo" href="#about">about</a></li>
+					<li><a class="linkTo" href="#projects">projects</a></li>
+          <li><a class="linkTo" href="#contact">contact</a></li>
         </ul>
       </nav>
-
       <div class="hero">
         <div class="title">
           <h1>Roman Struna</h1>
           <h3>Front-End Developer</h3>
         </div>
-        <ul class="social">
+        <ul class="list">
           <li><a href="https://github.com/RomchyFCC" target="_blank"><span class="fab fa-github fa-4x"></span></a></li>
           <li><a href="https://twitter.com/RomchyS" target="_blank"><span class="fab fa-twitter fa-4x"></span></a></li>
           <li><a href="https://www.freecodecamp.org/romchyfcc" target="_blank"><span class="fab fa-free-code-camp fa-4x"></span></a></li>
           <li><a href="https://www.linkedin.com/in/romanstruna/" target="_blank"><span class="fab fa-linkedin fa-4x"></span></a></li>
         </ul>
         <div class="next">
-          <a href="#aboutAnchor"><span class="fas fa-caret-down fa-5x"></span></a>
+          <a class="linkTo" data-pos="about" href="#about"><span class="fas fa-caret-down fa-5x"></span></a>
         </div>
-        <div id="aboutAnchor"></div>
       </div><!-- End of .hero -->
-      <section class="about">
+      <section id="about" class="about">
         <article class="summary">
           <h3>About</h3>
           <p>I'm a self learning front end developer based in Ljubljana, Slovenia.<br> I'm currently working on proficiency in React.JS and React related tools.</p>
@@ -52,7 +62,7 @@
         <article class="toolkit">
           <h3>Tools</h3>
           <p>My passion for web development drives my insatiable hunger for knowledge so my toolbox is always expanding.</p>
-          <ul class="social">
+          <ul class="list">
             <li><img src="./public/html.svg" height="75" width="75" alt="hypertext markup langauge logo"></li>
             <li><img src="./public/css.svg" height="75" width="75" alt="cascading style sheets logo"></li>
             <li><img src="./public/sass.svg" height="75" width="75" alt="syntactically awesome style sheets logo"></li>
@@ -61,13 +71,12 @@
             <li><img src="./public/github.svg" height="75" width="75" alt="github logo"></li>
           </ul>
         </article><!-- End of .toolkit -->
-        <div id="projectsAnchor"></div>
       </section><!-- End of .about -->
-      <div class="projects">
+      <div id="projects" class="projects">
         <h3>Projects</h3>
         <div class="stack">
           <header class="header">
-            <a href="#">Front-End Projects <i class="fas fa-caret-down"></i></a>
+            <p class="collapse">Front-End Projects <i class="fas fa-caret-down"></i></p>
           </header>
           <div class="elements">
             <div class="element">
@@ -75,7 +84,7 @@
                 <h5>Name</h5>
                 <p>Quick summary</p>
                 <h5>Tools:</h5>
-                <ul class="social">
+                <ul class="list">
                   <li>HTML</li>
                   <li>CSS</li>
                   <li>JS</li>
@@ -91,7 +100,7 @@
                 <h5>Name</h5>
                 <p>Quick summary</p>
                 <h5>Tools:</h5>
-                <ul class="social">
+                <ul class="list">
                   <li>HTML</li>
                   <li>CSS</li>
                   <li>JS</li>
@@ -107,7 +116,7 @@
                 <h5>Name</h5>
                 <p>Quick summary</p>
                 <h5>Tools:</h5>
-                <ul class="social">
+                <ul class="list">
                   <li>HTML</li>
                   <li>CSS</li>
                   <li>JS</li>
@@ -123,7 +132,7 @@
                 <h5>Name</h5>
                 <p>Quick summary</p>
                 <h5>Tools:</h5>
-                <ul class="social">
+                <ul class="list">
                   <li>HTML</li>
                   <li>CSS</li>
                   <li>JS</li>
@@ -146,10 +155,10 @@
         </article>
         <article class="direct">
           <p>If you would like to start a dialogue you are welcome to use the form below or contact me directly via e-mail attached in the résumé.</p>
-          <p>I'm excited to hear from you!</p>
+          <p><strong>I'm excited to hear from you!</strong></p>
         </article>
       </section><!-- End of .close -->
-      <div class="contact">
+      <div id="contact" class="contact">
         <h3>Contact Me</h3>
         <form class="form">
           <div class="field">

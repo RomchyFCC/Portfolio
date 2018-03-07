@@ -1,0 +1,41 @@
+@mixin dark-background($color: $text-prim) {
+  background: url("../public/pattern.svg"), $color;
+}
+
+@mixin light-background {
+  background: $text-sec;
+  box-shadow: 0 0 20px 5px $text-prim inset;
+}
+
+@mixin center-content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@mixin grid-dbl-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@mixin text-gradient($color, $color2, $color3) {
+  background-image: -webkit-linear-gradient($color, $color2, $color3);
+  background-image:         linear-gradient($color, $color2, $color3);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@mixin font-size($font, $line) {
+  font-size: $font;
+  line-height: $line;
+}
+
+@mixin button {
+  background: $accent;
+  color: $text-sec;
+  cursor: pointer;
+  &:hover {
+    background: rgba($accent, 0.9);
+    text-decoration: underline;
+  }
+}

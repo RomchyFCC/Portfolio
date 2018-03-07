@@ -1,0 +1,23 @@
+.close {
+  @include light-background;
+  padding: 50px 0;
+  @include font-size(1.5rem, 2rem);
+  .files {
+    @include center-content;
+    padding-bottom: 50px;
+    h3 {
+      padding-bottom: 20px;
+    }
+    a {
+      @include button;
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 0 10px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+  }
+  .direct {
+    @include center-content;
+  }
+}
