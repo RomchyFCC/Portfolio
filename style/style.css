@@ -432,16 +432,18 @@ li {
 }
 
 .form div p {
-  padding-left: 10px;
+  padding-left: 5px;
   visibility: hidden;
   position: relative;
-  top: 43px;
+  top: 35px;
+  text-align: left;
+  align-self: center;
+  transition: 0.2s;
 }
 
 .form .field {
   display: grid;
-  grid-template-rows: 25px 50px;
-  grid-gap: 10px;
+  grid-template-rows: 30px 50px;
 }
 
 .form .type-div div {
@@ -511,12 +513,25 @@ li {
   border: 2px solid rgba(33, 150, 243, 0.3);
 }
 
+.form p.swoosh {
+  top: 0;
+  visibility: visible;
+}
+
 .footer {
   padding: 10px 0;
   border-top: 1px solid #FFFFFF;
   display: grid;
   background: #212121;
   color: #FFFFFF;
+}
+
+.footer .name, .footer .fa-music {
+  color: #2196f3;
+}
+
+.footer .fa-heart {
+  color: red;
 }
 
 @media screen and (max-width: 1080px) {
@@ -617,6 +632,12 @@ li {
   }
   #burger-container {
     display: block;
+  }
+  .form p.swoosh {
+    top: 5px;
+  }
+  .form .msg-div p.swoosh {
+    top: 0px;
   }
 }
 

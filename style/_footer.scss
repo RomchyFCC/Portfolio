@@ -4,4 +4,10 @@
   display: grid;
   background: $text-prim;
   color: $text-sec;
+  .name, .fa-music {
+    color: $accent;
+  }
+  .fa-heart {
+    color: red;
+  }
 }

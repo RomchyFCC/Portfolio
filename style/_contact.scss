@@ -15,17 +15,18 @@
 .form {
   @include grid-dbl-col;
   grid-gap: 10px;
-  
   div p {
-    padding-left: 10px;
+    padding-left: 5px;
     visibility: hidden;
     position: relative;
-    top: 43px;
+    top: 35px;
+    text-align: left;
+    align-self: center;
+    transition: 0.2s;
   }
   .field {
     display: grid;
-    grid-template-rows: 25px 50px;
-    grid-gap: 10px;
+    grid-template-rows: 30px 50px;
   }
   
   .type-div div {
@@ -74,5 +75,12 @@
     &:hover {
       border: 2px solid rgba($accent, 0.3);
     }
+  }
+}
+
+.form {
+  p.swoosh {
+    top: 0;
+    visibility: visible;
   }
 }

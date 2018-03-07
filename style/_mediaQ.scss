@@ -109,6 +109,14 @@
   #burger-container {
     display: block;
   }
+  .form {
+    p.swoosh {
+      top: 5px;
+    }
+    .msg-div p.swoosh {
+      top: 0px;
+    }
+  }
 }
 
 @media screen and (max-width: 360px) {
