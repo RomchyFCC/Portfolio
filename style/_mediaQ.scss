@@ -50,6 +50,18 @@
     }
   }
   .form {
+    .field:first-child {
+      order: -2;
+    }
+    .field:nth-child(3) {
+      order: -1;
+    }
+    div p {
+      top: 39px;
+    }
+    p.msg {
+      top: 35px;
+    }
     grid-template-columns: 1fr;
     @include font-size(1.3rem, 1.8rem);
     grid-gap: 0;
@@ -100,7 +112,7 @@
       padding: 0 5px;
     }
   }
-  .contact .form, .form input, .form textarea, .form input::placeholder, .form textarea::placeholder{
+  .contact .form, .form input, .form textarea{
     @include font-size(1rem, 1.5rem);
   }
   .normal-nav .list {
@@ -110,6 +122,15 @@
     display: block;
   }
   .form {
+    .tooltip {
+      top: 1px;
+    }
+    div p {
+      top: 43px;
+    }
+    p.msg {
+      top: 32px;
+    }
     p.swoosh {
       top: 5px;
     }

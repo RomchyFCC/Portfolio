@@ -55,7 +55,7 @@
       </div><!-- End of .hero -->
       <section id="about" class="about">
         <article class="summary">
-          <h3>About</h3>
+          <h3>About me</h3>
           <p>I'm a self learning front end developer based in Ljubljana, Slovenia.<br> I'm currently working on proficiency in React.JS and React related tools.</p>
           <p>When I'm not studying or working on a project, I like to travel or spend time with my family &amp; friends.</p>
         </article><!-- End of .summary -->
@@ -79,7 +79,7 @@
             <p class="collapse">Front-End Projects <i class="fas fa-caret-down"></i></p>
           </header>
           <div class="elements">
-            <div class="element">
+            <div id="projectOne" class="element">
               <div class="info-box">
                 <h5>Name</h5>
                 <p>Quick summary</p>
@@ -95,7 +95,7 @@
                 </div><!-- End of .buttons -->
               </div><!-- End of .info-box -->
             </div><!-- End of .element -->
-            <div class="element">
+            <div id="projectTwo" class="element">
               <div class="info-box">
                 <h5>Name</h5>
                 <p>Quick summary</p>
@@ -111,7 +111,7 @@
                 </div><!-- End of .buttons -->
               </div><!-- End of .info-box -->
             </div><!-- End of .element -->
-            <div class="element">
+            <div id="projectThree" class="element">
               <div class="info-box">
                 <h5>Name</h5>
                 <p>Quick summary</p>
@@ -127,7 +127,7 @@
                 </div><!-- End of .buttons -->
               </div><!-- End of .info-box -->
             </div><!-- End of .element -->
-            <div class="element">
+            <div id="projectFour" class="element">
               <div class="info-box">
                 <h5>Name</h5>
                 <p>Quick summary</p>
@@ -160,21 +160,22 @@
       </section><!-- End of .close -->
       <div id="contact" class="contact">
         <h3>Contact Me</h3>
+        <p class="tooltip"><span class="required">*</span> required</p>
         <form class="form">
           <div class="field">
-            <p class="name">Name</p>
-            <input type="text" name="name" placeholder="Name" length="30">
+            <p class="name">Name <span class="required">*</span><span class="tooltip"></span></p>
+            <input type="text" name="name" maxlength="40">
           </div>
           <div class="field">
-            <p class="company">Company(optional)</p>
-            <input type="text" name="company" placeholder="Company(optional)">
+            <p class="company">Company<span class="tooltip"></span></p>
+            <input type="text" name="company" maxlength="40">
           </div>
           <div class="field">
-						<p class="email">E-mail address</p>
-            <input type="email" name="email" placeholder="E-mail address">
+						<p class="email">E-mail address <span class="required">*</span><span class="tooltip"></span></p>
+            <input type="email" name="email" maxlength="40">
           </div>
           <div class="field type-div">
-            <p class="type">Type</p>
+            <p class="type"></p>
             <div>
               <span>
                 <input type="radio" name="type" value="Casual" checked><span>Casual</span>
@@ -185,15 +186,15 @@
             </div>
           </div>
           <div class="msg-div">
-						<p class="msg">Message</p>
-            <textarea name="comment" placeholder="Message"></textarea>
+						<p class="msg">Message <span class="required">*</span><span class="tooltip"></span></p>
+            <textarea name="comment" maxlength="300"></textarea>
           </div>
           <input id="button" type="submit" name="send" value="Send">
         </form>
       </div><!-- End of .contact -->
       <div class="footer">
-        <p>Made with <span class="fas fa-music"></span>, <span class="fas fa-coffee"></span> and lots of <span class="fas fa-heart"></span></p>
-        <p>&copy; 2018 <span class="currentYear"></span> <span class="name">Roman</span> Struna</p>
+        <p>Made with <span class="fas fa-music"></span>, <span class="fas fa-coffee"></span> and lots of <span class="required fas fa-heart"></span></p>
+        <p>&copy; 2018 <span class="currentYear"></span> Roman Struna</p>
       </div>
     </div><!-- End of .wrapper -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

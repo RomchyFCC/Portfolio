@@ -47,3 +47,7 @@ li {
   border: 2px solid $accent;
   cursor: pointer;
 }
+
+.required {
+  color: $attention;
+}

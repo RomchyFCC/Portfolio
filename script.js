@@ -6,18 +6,23 @@ const currentYear = new Date().getFullYear();
 const navHeight = $('.normal-nav').outerHeight(true);
 const animationDuration = 1000;
 
-const input = document.querySelectorAll('form')
-const pName = document.querySelector('.name')
-const pMail = document.querySelector('.email')
-const pMsg = document.querySelector('.msg')
-const pComp = document.querySelector('.company')
+const textarea = $('.form textarea');
+const inputName = $('input[name="name"]');
+const inputEmail = $('input[name="email"]');
+const inputCompany = $('input[name="company"]');
+
+const input = document.querySelectorAll('form');
+const pName = document.querySelector('.name');
+const pMail = document.querySelector('.email');
+const pMsg = document.querySelector('.msg');
+const pComp = document.querySelector('.company');
 
 // element created for the form radio button
 const highlight = document.createElement('span');
 highlight.classList.add('highlight');
 document.body.append(highlight);
 
-// functions
+/////////////////////////// functions ///////////////////////////
 // highlight function keeps the highlight span on the correct radio button, should be called on resize and anytime an object in body is moved
 function highlightLink (e) {
   let linkCoords;
@@ -61,12 +66,65 @@ function debounce(func, wait = 20, immediate = true) {
   };
 }
 
+// courtesy of stack overflow
+// e-mail validator
+function validateEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
 // function controlling navbar's opacity
 function checkNav() {
   if (window.scrollY >= 250) {
     $('.normal-nav').addClass('scroll');
   } else {
     $('.normal-nav').removeClass('scroll');
+  }
+}
+
+// function that checks the form input validity
+function checkLength(e) {
+  const name = e.target.name;
+  const length = e.target.value.length;
+  const item = $('input[name='+name+']');
+  let max = item.attr('maxlength');
+  switch (name) {
+    case 'comment':
+
+      // set new textarea specific max value
+      max = $('textarea[name='+name+']').attr('maxlength');
+
+      // update input counter
+      $('.form .msg .tooltip').html(length + '/' + max);
+
+      // check textarea input
+      length < 3 ? textarea.css('border-bottom-color', 'red') : textarea.css('border-bottom-color', '#2196f3');
+      break;
+
+    case 'name':
+
+      // check name input and update the counter
+      length < 2 ? item.css('border-bottom-color', 'red') : item.css('border-bottom-color', '#2196f3');
+      $('.form .name .tooltip').html(length + '/' + max);
+      break;
+
+    case 'email':
+      // validate email input and update the counter
+      !validateEmail(e.target.value) ? item.css('border-bottom-color', 'red') : item.css('border-bottom-color', '#2196f3');
+      $('.form .email .tooltip').html(length + '/' + max);
+      break;
+
+    case 'company':
+      // update company counter
+      $('.form .company .tooltip').html(length + '/' + max);
+      break;
+  }
+
+  // check everything to let the user know if input is correct and they can proceed with submiting the information
+  if (textarea.val().length > 2 && inputName.val().length > 1 && validateEmail(inputEmail.val())) {
+    $('#button').css('background-color', '#2196f3');
+  } else {
+    $('#button').css('background-color', 'red');
   }
 }
 
@@ -104,7 +162,23 @@ function swooshRemove (e) {
   }
 }
 
-// event listeners
+function submit (e) {
+  if (textarea.val().length > 2 && inputName.val().length > 1 && validateEmail(inputEmail.val())) {
+    alert('Name: '+inputName.val()+' Message: '+textarea.val()+' Email: '+inputEmail.val()+' Company: '+inputCompany.val() + ' all of this will not be submited, working on the back end now')
+    inputName.val("");
+    textarea.val("");
+    inputEmail.val("");
+    inputCompany.val("");
+  } else {
+    e.preventDefault()
+    return;
+  }
+}
+
+/////////////////////////// event listeners ///////////////////////////
+// submit button
+$('#button').on('click', e => {submit(e)});
+
 // click listener to close the navbar
 $('body').on('click', () => {
   if ($('.flex-nav').css('right') === '0px'){
@@ -121,7 +195,16 @@ $('#burger-container').on('click', () => {
 
 // toggler for projects display
 $('.collapse').on('click', e => {
-  let element = $(e.target.parentNode.nextElementSibling.parentNode);
+  let element;
+  // checks which element is clicked
+  // it's made like this because new elements will be added 
+  if (e.target.nodeName === 'I') {
+    element = $(e.target.parentNode.parentNode.nextElementSibling.parentNode);
+  } else if (e.target.nodeName === 'P') {
+    element = $(e.target.parentNode.nextElementSibling.parentNode);
+  } else {
+    return;
+  }
   if(element.css('height') >= '31px') {
     element.css('height', '30px');
   } else {
@@ -154,27 +237,25 @@ linkButton.forEach(link => link.addEventListener('click', (e) => {
   }
 }));
 
-/*function submit (e) {
-  e.preventDefault()
-  let name = nameIn.value
-  let mail = mailIn.value
-  let message = msgIn.value
-  alert('This is a front end only project so you will shortly be redirected to e-mail me!')
-  window.location.replace(`mailto:d-nice_100@hotmail.com?subject=Portfolio%20contact%20-%20${name}&body=Name:%20${name}%0D%0AE-mail:%20${mail}%0D%0AGreetings,%0D%0A${message}`)
-}*/
-
+// event listeners for cleaner highlighting on radio buttons
 window.addEventListener('resize', debounce(highlightLink));
-window.addEventListener("scroll", checkNav);
 triggers.forEach(a => a.addEventListener("click", highlightLink));
-input.forEach(item => item.addEventListener('keyup', (e) => {
-  swoosh(e);
-  swooshRemove(e);
-}));
 highlightLink();
 
+// event listeners for input field in the contact section
+input.forEach(item => item.addEventListener('keyup', e => checkLength(e)));
+input.forEach(item => item.addEventListener('focusin', e => swoosh(e)));
+input.forEach(item => item.addEventListener('focusout', e => swooshRemove(e)));
+
+// navbar event listener
+window.addEventListener("scroll", debounce(checkNav, 10));
+
 $(document).ready(() => {
-  // fade in title after load
+
+  // fade-in the title after load
   $('.title').fadeTo(animationDuration + 1000, 1);
+
+  // check current year and if it's above 2019, add copyright for that year
   if (currentYear > 2018) {
     $('.currentYear').html(' - ' + currentYear);
   }
