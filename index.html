@@ -3,11 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#585858">
     <link rel="shortcut icon" type="image/x-icon" href="./public/favicon.ico">
-    
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/brands.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/regular.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <title>Roman Struna Portfolio</title>
   </head>
@@ -150,8 +152,8 @@
         <article class="files">
           <h3>Thank you for visiting!</h3>
           <p>I hope you enjoyed the quick tour. If you wish to know more, click the links below to download my résumé in English or Slovene language.</p>
-          <a href="#" download><i class="far fa-file-pdf" aria-hidden="true">&ThickSpace;</i>English</a>
-          <a href="#" download><i class="far fa-file-pdf" aria-hidden="true">&ThickSpace;</i>Slovene</a>
+          <a href="./public/files/download.pdf" download><i class="far fa-file-pdf" aria-hidden="true">&ThickSpace;</i>English</a>
+          <a href="./public/files/download1.pdf" download><i class="far fa-file-pdf" aria-hidden="true">&ThickSpace;</i>Slovene</a>
         </article>
         <article class="direct">
           <p>If you would like to start a dialogue you are welcome to use the form below or contact me directly via e-mail attached in the résumé.</p>
@@ -161,7 +163,7 @@
       <div id="contact" class="contact">
         <h3>Contact Me</h3>
         <p class="tooltip"><span class="required">*</span> required</p>
-        <form class="form">
+        <form class="form" method="POST" action="./submit">
           <div class="field">
             <p class="name">Name <span class="required">*</span><span class="tooltip"></span></p>
             <input type="text" name="name" maxlength="40">

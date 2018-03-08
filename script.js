@@ -164,7 +164,6 @@ function swooshRemove (e) {
 
 function submit (e) {
   if (textarea.val().length > 2 && inputName.val().length > 1 && validateEmail(inputEmail.val())) {
-    alert('Name: '+inputName.val()+' Message: '+textarea.val()+' Email: '+inputEmail.val()+' Company: '+inputCompany.val() + ' all of this will not be submited, working on the back end now')
     inputName.val("");
     textarea.val("");
     inputEmail.val("");
