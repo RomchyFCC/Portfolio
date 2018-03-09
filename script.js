@@ -164,10 +164,10 @@ function swooshRemove (e) {
 
 function submit (e) {
   if (textarea.val().length > 2 && inputName.val().length > 1 && validateEmail(inputEmail.val())) {
-    inputName.val("");
+    /*inputName.val("");
     textarea.val("");
     inputEmail.val("");
-    inputCompany.val("");
+    inputCompany.val("");*/
   } else {
     e.preventDefault()
     return;
