@@ -314,7 +314,6 @@ li {
 }
 
 .stack header p:hover {
-  background: rgba(33, 150, 243, 0.9);
   text-decoration: underline;
 }
 
@@ -362,14 +361,15 @@ li {
 
 .info-box .buttons a {
   padding: 5px;
+  transition: 0.2s;
   background: #2196f3;
   color: #FFFFFF;
   cursor: pointer;
 }
 
 .info-box .buttons a:hover {
-  background: rgba(33, 150, 243, 0.9);
   text-decoration: underline;
+  transform: scale(1.1);
 }
 
 .close {
@@ -391,6 +391,7 @@ li {
 }
 
 .close .files a {
+  transition: 0.2s;
   background: #2196f3;
   color: #FFFFFF;
   cursor: pointer;
@@ -402,8 +403,8 @@ li {
 }
 
 .close .files a:hover {
-  background: rgba(33, 150, 243, 0.9);
   text-decoration: underline;
+  transform: scale(1.1);
 }
 
 .close .direct {
@@ -475,14 +476,15 @@ li {
   grid-column: 2/3;
   padding: 5px;
   border: none;
+  transition: 0.2s;
   background: #2196f3;
   color: #FFFFFF;
   cursor: pointer;
 }
 
 .form #button:hover {
-  background: rgba(33, 150, 243, 0.9);
   text-decoration: underline;
+  transform: scale(1.1);
 }
 
 .form input, .form textarea {

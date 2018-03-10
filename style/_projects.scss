@@ -33,7 +33,12 @@
       display: inline;
     }
     p {
-      @include button;
+      background: $accent;
+      color: $text-sec;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
       height: 100%;
     }
   }
