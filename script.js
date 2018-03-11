@@ -239,7 +239,6 @@ linkButton.forEach(link => link.addEventListener('click', (e) => {
 // event listeners for cleaner highlighting on radio buttons
 window.addEventListener('resize', debounce(highlightLink));
 triggers.forEach(a => a.addEventListener("click", highlightLink));
-highlightLink();
 
 // event listeners for input field in the contact section
 input.forEach(item => item.addEventListener('keyup', e => checkLength(e)));
@@ -253,6 +252,9 @@ $(document).ready(() => {
 
   // fade-in the title after load
   $('.title').fadeTo(animationDuration + 1000, 1);
+  
+  // Highlight the link on document ready
+  highlightLink();
 
   // check current year and if it's above 2019, add copyright for that year
   if (currentYear > 2018) {
