@@ -1,12 +1,14 @@
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1250px) {
   .elements {
     overflow-y: scroll;
     .element {
-      
       width: 30%;
       margin: 25px (10%/6);
     }
   }
+}
+
+@media screen and (max-width: 1080px) {
   .form .type-div div {
     grid-template-columns: 1fr 2fr;
   }
@@ -29,6 +31,13 @@
   .hero .list span {
     font-size: 3.2rem;
   }
+  .elements {
+    overflow-y: scroll;
+    .element {
+      width: 45%;
+      margin: 25px 2.5%;
+    }
+  }
 }
 
 
@@ -42,12 +51,6 @@
 @media screen and (max-width: 720px) {
   .about p {
     @include font-size(1rem, 1.5rem);
-  }
-  .elements {
-    .element {
-      width: 45%;
-      margin: 25px 2.5%;
-    }
   }
   .form {
     .field:first-child {
@@ -86,13 +89,15 @@
     font-size: 2.7rem;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .elements {
     .element {
       width: 90%;
       margin: 25px 5%;
     }
   }
+}
+@media screen and (max-width: 480px) {
   .form {
     .type-div div {
       grid-template-columns: 1.5fr 2fr;

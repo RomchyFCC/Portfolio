@@ -64,18 +64,22 @@
   }
 }
 .info-box {
+  display: grid;
   transition: 0.2s;
   position: relative;
-  top: 260px; /*260*/
-  display: flex;
-  flex-wrap: wrap;
+  top: 280px;
   height: 100%;
   align-items: center;
-  background: rgba($text-sec, 0.5);
+  background: rgba($text-sec, 0.9);
+  grid-template-rows: 40px 1fr repeat(3, auto);
   * {
     padding: 10px;
   }
+  p {
+    font-weight: 700;
+  }
   .buttons {
+    grid-row: 5/6;
     @include grid-dbl-col;
     grid-gap: 10px;
     a {
@@ -84,4 +88,22 @@
     }
   }
   
+}
+
+#projectOne{
+  background: url('../public/projectOne.jpg');
+}
+#projectTwo{
+  background: url('../public/projectTwo.jpg');
+}
+#projectThree{
+  background: url('../public/projectThree.jpg');
+  
+}
+#projectFour{
+  background: url('../public/projectFour.jpg');
+}
+#projectOne, #projectTwo, #projectThree, #projectFour {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
