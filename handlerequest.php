@@ -1,6 +1,6 @@
 <?php 
 	$errors = '';
-	$myemail = 'admin@romanstruna.com';
+	$myemail = 'romanstruna@romanstruna.com';
 
 	if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['comment'])) {
 		$errors .= "\n Error: all fields are required";
@@ -32,7 +32,7 @@
 <html>
 	<head>
 		<title>Contact form</title>
-		<meta http-equiv="refresh" content="5;URL=http://www.romanstruna.com">
+		<meta http-equiv="refresh" content="5;URL=https://www.romanstruna.com">
 	</head>
 	<body>
 		<!-- This page is displayed only if there is some error -->
