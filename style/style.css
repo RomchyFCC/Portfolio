@@ -62,7 +62,7 @@ li {
   background: rgba(33, 33, 33, 0.2);
   border-bottom: 1px solid #212121;
   align-items: center;
-  z-index: 1;
+  z-index: 5;
   transition: all 2s;
 }
 
@@ -676,6 +676,12 @@ li {
     width: 90%;
     margin: 25px 5%;
   }
+  .normal-nav .list {
+    display: none;
+  }
+  #burger-container {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -695,12 +701,6 @@ li {
   .contact .form, .form input, .form textarea {
     font-size: 1rem;
     line-height: 1.5rem;
-  }
-  .normal-nav .list {
-    display: none;
-  }
-  #burger-container {
-    display: block;
   }
   .form .tooltip {
     top: 1px;
