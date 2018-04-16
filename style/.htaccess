@@ -1,0 +1,45 @@
+# Redirect to www
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://www.%1%{REQUEST_URI} [L,NE,R=301]
+# Or, compress certain file types by extension:
+<files *.html>
+	SetOutputFilter DEFLATE
+</files>
+<files *.css>
+	SetOutputFilter DEFLATE
+</files>
+<files *.svg>
+	SetOutputFilter DEFLATE
+</files>
+<files *.jpg>
+	SetOutputFilter DEFLATE
+</files>
+
+<IfModule mod_headers.c>
+    # Month
+    <FilesMatch "\.(jpg|ico|jpeg|png|gif|swf|svg)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+
+    # WEEK
+    <FilesMatch "\.(js|css|swf)$">
+        Header set Cache-Control "max-age=604800"
+    </FilesMatch>
+</IfModule>
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|jpg|svg|jpeg|png|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
