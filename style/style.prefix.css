@@ -205,17 +205,17 @@ li {
 
 .hero .title {
   -ms-grid-row: 2;
+      grid-row: 2;
   -ms-grid-column: 1;
-  grid-row: 2;
-  grid-column: 1;
+      grid-column: 1;
   grid-area: title;
 }
 
 .hero .list {
   -ms-grid-row: 3;
+      grid-row: 3;
   -ms-grid-column: 1;
-  grid-row: 3;
-  grid-column: 1;
+      grid-column: 1;
   grid-area: social;
 }
 
@@ -225,9 +225,9 @@ li {
 
 .hero .next {
   -ms-grid-row: 5;
+      grid-row: 5;
   -ms-grid-column: 1;
-  grid-row: 5;
-  grid-column: 1;
+      grid-column: 1;
   grid-area: next;
 }
 
@@ -350,8 +350,7 @@ li {
 }
 
 .projects {
-  padding: 100px 0;
-  padding-top: 50px;
+  padding: 50px 0;
   background: url("../public/pattern.svg"), #212121;
   color: #FFFFFF;
 }
@@ -365,6 +364,7 @@ li {
 .projects .stack {
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 50px;
   height: 400px;
   overflow: hidden;
   background: #FFFFFF;
@@ -506,7 +506,23 @@ li {
   background: url("../public/projectFour.jpg");
 }
 
-#projectOne, #projectTwo, #projectThree, #projectFour {
+#projectFive {
+  background: url("../public/projectFive.jpg");
+}
+
+#projectSix {
+  background: url("../public/projectSix.jpg");
+}
+
+#projectSeven {
+  background: url("../public/projectSeven.jpg");
+}
+
+#projectEight {
+  background: url("../public/projectEight.jpg");
+}
+
+#projectOne, #projectTwo, #projectThree, #projectFour, #projectFive, #projectSix, #projectSeven, #projectEight {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
