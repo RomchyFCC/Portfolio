@@ -522,7 +522,11 @@ li {
   background: url("../public/projectEight.jpg");
 }
 
-#projectOne, #projectTwo, #projectThree, #projectFour, #projectFive, #projectSix, #projectSeven, #projectEight {
+#projectNine {
+  background: url("../public/projectNine.jpg");
+}
+
+#projectOne, #projectTwo, #projectThree, #projectFour, #projectFive, #projectSix, #projectSeven, #projectEight, #projectNine {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }

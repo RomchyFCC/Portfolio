@@ -160,7 +160,11 @@ li {
   height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-areas: "." "title" "social" "." "next";
+  grid-template-areas: "."
+ "title"
+ "social"
+ "."
+ "next";
 }
 
 .hero .title {
@@ -408,7 +412,23 @@ li {
   background: url("../public/projectEight.jpg");
 }
 
-#projectOne, #projectTwo, #projectThree, #projectFour, #projectFive, #projectSix, #projectSeven, #projectEight {
+#projectNine {
+  background: url("../public/projectNine.jpg");
+}
+
+/* #projectTen {
+  background: url("../public/projectEight.jpg");
+} */
+
+#projectOne,
+#projectTwo,
+#projectThree,
+#projectFour,
+#projectFive,
+#projectSix,
+#projectSeven,
+#projectEight,
+#projectNine {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
