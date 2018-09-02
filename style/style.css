@@ -416,9 +416,13 @@ li {
   background: url("../public/projectNine.jpg");
 }
 
-/* #projectTen {
-  background: url("../public/projectEight.jpg");
-} */
+#projectTen {
+  background: url("../public/projectTen.png");
+}
+
+#projectEleven {
+  background: url("../public/projectEleven.png");
+}
 
 #projectOne,
 #projectTwo,
@@ -428,7 +432,9 @@ li {
 #projectSix,
 #projectSeven,
 #projectEight,
-#projectNine {
+#projectNine,
+#projectTen,
+#projectEleven {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
