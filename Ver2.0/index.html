@@ -63,19 +63,28 @@
         </div>
       </div><!-- End of .hero -->
       <section id="about" class="about">
-        <article class="summary">
-          <h2>About me</h2>
-          <p>I'm a self learning full stack developer based in Slovenia with over a year of experience working on wordpress sites, REST APIs and using marketing tools such as Net-Results and Mautic.</p>
-          <p>When I'm not studying, working on a project or my business venture, I like to travel or spend time with my family &amp; friends doing crazy things.</p>
-        </article><!-- End of .summary -->
+        <h2>Who actually am I?</h2>
+        <div class="about-flex">
+          <div class="portfolio-image">
+            <img src="./public/Roman-Struna-full-stack-developer.jpg" width="280">
+            <p>Yup, this is me.<br>I love dress code events 🕺</p>
+          </div>
+          <article class="summary">
+            <p>I'm a <strong>self-learning full stack developer</strong> living in Slovenia. I have <strong>over a year of experience</strong> working on WordPress sites, creating <strong>REST APIs</strong>, building projects from scratch with <strong>HTML</strong>, <strong>CSS</strong>, <strong>JS</strong> and using marketing tools such as <strong>Net-Results</strong> and <strong>Mautic</strong>.</p>
+            <div class="dot"></div>
+            <p>When I'm not studying, working on a project or my business venture, I like to travel or spend time with my family &amp; friends doing crazy things.🤪</p>
+          </article><!-- End of .summary -->
+        </div>
         <article class="toolkit">
-          <p>My passion for web development drives my insatiable hunger for knowledge so my toolbox is always expanding.</p>
+          <p>I made it <strong>my goal</strong> to familiarize myself with <strong>every relevant coding language</strong> and even though I love working on the backend, my favorite is still javascript and the <strong>React</strong> framework. 😍</p>
+          <div class="dot"></div>
+          <p>Below is everything I've learned so far. My <strong>learning goals</strong> in the near future include <strong>.NET</strong>, <strong>C#</strong> and relearning <strong>node.js</strong> and <strong>MondoDB</strong>. 👨‍🎓</p>
           <ul class="list">
             <li><img src="./public/html.svg" height="75" width="75" alt="hypertext markup langauge logo"></li>
             <li><img src="./public/css-min.svg" height="75" width="75" alt="cascading style sheets logo"></li>
+            <li><img src="./public/js.svg" height="75" width="75" alt="javascript logo"></li>
             <li><img src="./public/sass-min.svg" height="75" width="75" alt="syntactically awesome style sheets logo"></li>
             <li><img src="./public/bootstrap-min.svg" height="75" width="75" alt="bootstrap logo"></li>
-            <li><img src="./public/es6-min.svg" height="75" width="75" alt="javascript logo"></li>
             <li><img src="./public/jquery-min.svg" height="75" width="75" alt="jquery logo"></li>
             <li><img src="./public/github-min.svg" height="75" width="75" alt="github logo"></li>
             <li><img src="./public/react-min.svg" height="75" width="75" alt="react logo"></li>
@@ -86,7 +95,7 @@
         </article><!-- End of .toolkit -->
       </section><!-- End of .about -->
       <div id="projects" class="projects">
-        <h2>Projects</h2>
+        <h2>Portfolio</h2>
         <div class="stack">
           <header class="header">
             <p class="collapse">Front-End Projects <i class="fas fa-caret-down"></i></p>
@@ -172,8 +181,10 @@
         </div><!-- End of react projects -->
       </div><!-- End of .projects -->
       <div id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form class="form" method="POST" action="https://www.romanstruna.com/handlerequest.php">
+        <h2>Let's talk!</h2>
+        <p>Want to colaborate? Or just want to know if I'm single 😉?<br>
+        Just kidding here (I am, btw). But yeah, leave a message below and I'll repsond as soon as possible.</p>
+        <form id="form" class="form" method="POST" >
           <div class="field">
 						<p class="email">E-mail address<span class="tooltip"></span></p>
             <input type="email" name="email" maxlength="40">
@@ -189,11 +200,11 @@
         <p>Made with <span class="fas fa-music"></span>, <span class="fas fa-coffee"></span> and lots of <span class="required fas fa-heart"></span></p>
         <p>&copy; 2018 <span class="currentYear"></span> Roman Struna</p>
       </div><!-- End of .footer -->
-      <div id="stickyButton" class="sticky-social sticky-base"><img id="shareButton" src="./public/share-min.svg" width="60" ><i id="shareClose" class="fas fa-times fa-3x hide"></i></div>
-      <div id="instaSticky" class="sticky-social sticky-animate"><a href="instagram" target="_blank"><img src="./public/instagram-min.svg" width="30" ></a></div>
-      <div id="resumeSticky" class="sticky-social sticky-animate"><a href="resume" download target="_blank"><img src="./public/pdficon-min.svg" width="20"></a></div>
-      <div id="linkedSticky" class="sticky-social sticky-animate"><a href="https://www.linkedin.com/in/romanstruna/" target="_blank"><img src="./public//linked-min.svg" width="25"></a></div>
-      <div id="gitSticky" class="sticky-social sticky-animate"><a href="https://github.com/RomchyFCC" target="_blank"><img src="./public/github-min.svg" width="30"></a></div>
+      <div id="stickyButton" class="sticky-social sticky-base"><img id="shareButton" src="./public/more.svg" width="60" ><img id="shareClose" class="hide" src="./public/x.svg" width="60" ></div>
+      <div id="instaSticky" class="sticky-social sticky-animate"><a href="instagram" target="_blank"><img src="./public/insta.svg" width="50" ></a></div>
+      <div id="resumeSticky" class="sticky-social sticky-animate"><a href="resume" download target="_blank"><img src="./public/doc.svg" width="50"></a></div>
+      <div id="linkedSticky" class="sticky-social sticky-animate"><a href="https://www.linkedin.com/in/romanstruna/" target="_blank"><img src="./public//in.svg" width="50"></a></div>
+      <div id="gitSticky" class="sticky-social sticky-animate"><a href="https://github.com/RomchyFCC" target="_blank"><img src="./public/git.svg" width="50"></a></div>
     </div><!-- End of .wrapper -->
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

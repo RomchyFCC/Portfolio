@@ -9,6 +9,7 @@ body {
   font-size: 16px;
   min-width: 290px;
   text-align: center;
+  color: #212121;
 }
 
 a {
@@ -152,11 +153,11 @@ li {
   transform: rotate(-45deg);
   top: -17px;
 }
-
+/* background: -webkit-linear-gradient(to bottom, #061161, #780206); */
 .hero {
-  background: #780206;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #230D49;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #4E0828, #230D49);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #4E0828, #230D49); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   min-height: 500px;
   height: 100vh;
   width: 100%;
@@ -206,7 +207,6 @@ li {
 
 .title h1 {
   font-size: 5rem;
-  border-bottom: 5px solid #FFF;
   padding: 0 25px;
 }
 
@@ -233,40 +233,73 @@ li {
 
 .about {
   background: #FFFFFF;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  padding: 50px;
 }
 
-.about h3 {
-  padding-bottom: 20px;
+.about h2 {
+  padding-bottom: 50px;
+  color: #230D49;
+  font-size: 2rem;
 }
-
-.about .summary {
-  width: 80%;
+.about-flex,
+.toolkit {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 50px 0;
 }
-
-.about .toolkit {
-  padding: 0 50px;
+.about-flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.portfolio-image {
+  flex:1 300px;
+  justify-self: center;
+  margin:10px;
+}
+.portfolio-image img{
+  border-radius: 150px;
+}
+.portfolio-image p{
+  color: #585858;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.about .summary {
+  max-width: 800px;
+  margin: 0 auto;
+  flex:2 300px;
+  margin: 10px;
 }
 
 .about .toolkit .list {
   justify-content: center;
-  padding: 50px 0;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
+.dot {
+  height: 10px;
+  width: 10px;
+  background: #4E0828;
+  border-radius: 10px;
+  margin: 20px auto;
 
+}
 .projects {
-  padding: 50px 0;
-  background: url("../public/pattern.svg"), #212121;
+  padding: 50px;
+  background:  #FFF;
   color: #FFFFFF;
+  border-top: 1px solid #212121;
 }
 
-.projects h3 {
-  padding-bottom: 20px;
-  font-size: 1.5rem;
+.projects h2 {
+  padding-bottom: 50px;
+  font-size: 2rem;
   line-height: 2rem;
+  color: #230D49;
 }
 
 .projects .stack {
@@ -468,18 +501,23 @@ li {
 }
 
 .contact {
-  background: url("../public/pattern.svg"), #212121;
+  background: #4E0828;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #230D49, #4E0828);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #230D49, #4E0828); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-size: 1.5rem;
   line-height: 2rem;
   width: 100%;
-  padding: 50px 0;
+  padding: 50px;
   color: #FFFFFF;
 }
 
-.contact h3 {
-  padding-bottom: 20px;
+.contact h2 {
+  padding-bottom: 50px;
 }
-
+.contact p {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
 .contact .tooltip {
   font-size: 1.1rem;
   line-height: 1.3rem;
@@ -489,6 +527,7 @@ li {
 .contact form {
   width: 80%;
   margin: 0 auto;
+  margin-top:25px;
 }
 
 .form {
@@ -535,6 +574,7 @@ li {
   background: #2196f3;
   color: #FFFFFF;
   cursor: pointer;
+  margin-top:20px !important;
 }
 
 .form #button:hover {
@@ -604,7 +644,7 @@ li {
   padding: 10px 0;
   border-top: 1px solid #FFFFFF;
   display: grid;
-  background: #212121;
+  background: #4E0828;
   color: #FFFFFF;
 }
 
@@ -616,19 +656,20 @@ li {
   position: fixed;
   bottom: 25px;
   left: 25px;
-  color: #000;
+  color: #212121;
   cursor: pointer;
   display: inline-block;
-  background:rgba(255, 255, 255, 0.1);
   background:rgba(0, 0, 0, 0.1);
   border-radius: 100px;
   width: 50px;
   height: 50px;
   z-index:15;
 }
+.scroll-more {
+  background:rgba(0, 0, 0, 0.6);
+}
 .sticky-social:hover {
-  background:rgba(255, 255, 255, 0.5);
-  background:rgba(0, 0, 0, 0.5);
+  background:rgba(0, 0, 0, 0.9);
 }
 .sticky-base {
   width:60px;
@@ -636,7 +677,7 @@ li {
   z-index: 25;
 }
 .sticky-social a {
-  color: #000;
+  color: #212121;
   vertical-align: middle;
   text-align: center;
 }
@@ -652,30 +693,26 @@ li {
   opacity: 1;
 }
 .instagram-sticky {
-  padding: 10px 0;
   bottom: 80px;
   left: 125px;
 }
 .resume-sticky {
   bottom: 125px;
   left: 80px;
-  padding: 12px 0;
 }
 .linkedin-sticky {
   bottom: 20px;
   left: 150px;
-  padding: 13px 0;
 }
 .github-sticky {
   bottom: 150px;
   left: 20px;
-  padding: 12px 0;
+}
+#shareClose {
+  border-radius: inherit;
 }
 .hide {
   display: none;
-}
-#shareClose {
-  margin: 6px;
 }
 .form {
   grid-template-columns: 1fr;
@@ -789,6 +826,11 @@ font-weight: 300;
   .hero .list span {
     font-size: 2.7rem;
   }
+  .about,
+  .contact,
+  .projects {
+    padding: 50px 35px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -802,11 +844,20 @@ font-weight: 300;
   #burger-container {
     display: block;
   }
+  .contact form,
+  .projects .stack {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .form .type-div div {
     grid-template-columns: 1.5fr 2fr;
+  }
+  .about,
+  .contact,
+  .projects {
+    padding: 50px 15px;
   }
   .title h1 {
     font-size: 2rem;

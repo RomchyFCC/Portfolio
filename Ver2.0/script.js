@@ -45,8 +45,20 @@ function validateEmail(email) {
 function checkNav() {
   if (window.scrollY >= 250 || $('#burger-container').hasClass('open')) {
     $('.normal-nav').addClass('scroll');
+    $('#shareClose').addClass('scroll-more');
+    $('#stickyButton').addClass('scroll-more');
+    $('#instaSticky').addClass('scroll-more');
+    $('#linkedSticky').addClass('scroll-more');
+    $('#gitSticky').addClass('scroll-more');
+    $('#resumeSticky').addClass('scroll-more');
   } else {
     $('.normal-nav').removeClass('scroll');
+    $('#shareClose').removeClass('scroll-more');
+    $('#stickyButton').removeClass('scroll-more');
+    $('#instaSticky').removeClass('scroll-more');
+    $('#linkedSticky').removeClass('scroll-more');
+    $('#gitSticky').removeClass('scroll-more');
+    $('#resumeSticky').removeClass('scroll-more');
   }
 }
 
@@ -112,7 +124,41 @@ function submit (e) {
     return;
   }
 }
+$("form[name='formTwo']").submit(function(event) {
+  event.preventDefault();
+  error = false;
 
+  var email = inputEmail.val();
+  if (email.length < 1) {
+    error = true;
+  } else {
+    var regex = new RegExp(/^([\w-\.]*[a-zA-Z0-9_]+@([\w-]+\.)+[\w-]{2,4})?$/);
+    if (!regex.test(email)) {
+      error = true;
+    }
+  }
+  if (textarea.val().length < 3 && !validateEmail(inputEmail.val())) {
+    return;
+  } else {
+    $('#loading2').removeClass('hide');
+    $('#button').attr('disabled', true);
+    event.preventDefault();
+    $.post("https://www.romanstruna.com/handlerequest.php",
+    {
+      email: inputEmail.val(),
+      text: textarea.val(),
+    },
+    function(data, status){
+      var result = JSON.parse(data);
+      console.log(result);
+      if (result.status === "OK") {
+      } else {
+      }
+    });
+    $('#loading2').addClass('hide');
+    $('#button').attr('disabled', false);
+  }
+});
 /////////////////////////// event listeners ///////////////////////////
 // sticky button
 button.on('click', function() {
@@ -145,8 +191,20 @@ $('#burger-container').on('click', () => {
   $('#burger-container').toggleClass('open');
   $('.flex-nav').toggleClass('open');
   $('.normal-nav').addClass('scroll');
+  $('#shareClose').addClass('scroll-more');
+  $('#stickyButton').addClass('scroll-more');
+  $('#instaSticky').addClass('scroll-more');
+  $('#linkedSticky').addClass('scroll-more');
+  $('#gitSticky').addClass('scroll-more');
+  $('#resumeSticky').addClass('scroll-more');
   if (window.scrollY < 250 && !$('#burger-container').hasClass('open')) {
     $('.normal-nav').removeClass('scroll');
+    $('#shareClose').removeClass('scroll-more');
+    $('#stickyButton').removeClass('scroll-more');
+    $('#instaSticky').removeClass('scroll-more');
+    $('#linkedSticky').removeClass('scroll-more');
+    $('#gitSticky').removeClass('scroll-more');
+    $('#resumeSticky').removeClass('scroll-more');
   }
 });
 
