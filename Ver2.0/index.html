@@ -66,40 +66,20 @@
         <h2>Who actually am I?</h2>
         <div class="about-flex">
           <div class="portfolio-image">
-            <img src="./public/Roman-Struna-full-stack-developer.jpg" width="280">
+            <img src="./public/Roman-Struna-full-stack-developer.jpg" width="250">
             <p>Yup, this is me.<br>I love dress code events 🕺</p>
           </div>
           <article class="summary">
             <p>I'm a <strong>self-learning full stack developer</strong> living in Slovenia. I have <strong>over a year of experience</strong> working on WordPress sites, creating <strong>REST APIs</strong>, building projects from scratch with <strong>HTML</strong>, <strong>CSS</strong>, <strong>JS</strong> and using marketing tools such as <strong>Net-Results</strong> and <strong>Mautic</strong>.</p>
-            <div class="dot"></div>
-            <p>When I'm not studying, working on a project or my business venture, I like to travel or spend time with my family &amp; friends doing crazy things.🤪</p>
+            <!-- <div class="dot"></div> -->
+            <p style="margin-bottom:0;">When I'm not studying, working on a project or my business venture, I like to travel or spend time with my family &amp; friends doing crazy things.🤪</p>
           </article><!-- End of .summary -->
         </div>
-        <article class="toolkit">
-          <p>I made it <strong>my goal</strong> to familiarize myself with <strong>every relevant coding language</strong> and even though I love working on the backend, my favorite is still javascript and the <strong>React</strong> framework. 😍</p>
-          <div class="dot"></div>
-          <p>Below is everything I've learned so far. My <strong>learning goals</strong> in the near future include <strong>.NET</strong>, <strong>C#</strong> and relearning <strong>node.js</strong> and <strong>MondoDB</strong>. 👨‍🎓</p>
-          <ul class="list">
-            <li><img src="./public/html.svg" height="75" width="75" alt="hypertext markup langauge logo"></li>
-            <li><img src="./public/css-min.svg" height="75" width="75" alt="cascading style sheets logo"></li>
-            <li><img src="./public/js.svg" height="75" width="75" alt="javascript logo"></li>
-            <li><img src="./public/sass-min.svg" height="75" width="75" alt="syntactically awesome style sheets logo"></li>
-            <li><img src="./public/bootstrap-min.svg" height="75" width="75" alt="bootstrap logo"></li>
-            <li><img src="./public/jquery-min.svg" height="75" width="75" alt="jquery logo"></li>
-            <li><img src="./public/github-min.svg" height="75" width="75" alt="github logo"></li>
-            <li><img src="./public/react-min.svg" height="75" width="75" alt="react logo"></li>
-            <li><img src="./public/php-min.svg" height="75" width="75" alt="php logo"></li>
-            <li><img src="./public/mysql.svg" height="75" width="75" alt="mysql logo"></li>
-            <li><img src="./public/wordpress.svg" height="75" width="75" alt="wordpress logo"></li>
-          </ul>
-        </article><!-- End of .toolkit -->
       </section><!-- End of .about -->
       <div id="projects" class="projects">
-        <h2>Portfolio</h2>
+        <h2>What about my projects?</h2>
         <div class="stack">
-          <header class="header">
-            <p class="collapse">Front-End Projects <i class="fas fa-caret-down"></i></p>
-          </header>
+          <div class="left-arrow"><img src="./public/left.svg" alt="Roman struna's left arrow icon"></div>
           <div class="elements">
             <div id="projectOne" class="element">
               <div class="info-box">
@@ -178,33 +158,68 @@
               </div><!-- End of .info-box -->
             </div><!-- End of .element -->
           </div><!-- End of .elements -->
+          <div class="right-arrow"><img src="./public/right.svg" alt="Roman struna's right arrow icon"></div>
         </div><!-- End of react projects -->
+        <div class="dots">
+          <div id="dot1" class="dot picked-dot"></div>
+          <div id="dot2" class="dot"></div>
+          <div id="dot3" class="dot"></div>
+          <div id="dot4" class="dot"></div>
+          <div id="dot5" class="dot"></div>
+        </div>
       </div><!-- End of .projects -->
+      <section class="about">
+        <article class="toolkit">
+          <p>I made it <strong>my goal</strong> to familiarize myself with <strong>every relevant coding language</strong> and even though I love working on the backend, my favorite is still javascript and the <strong>React</strong> framework. 😍</p>
+          <!-- <div class="dot"></div> -->
+          <p>Below is everything I've learned so far. My <strong>learning goals</strong> in the near future include <strong>.NET</strong>, <strong>C#</strong> and relearning <strong>node.js</strong> and <strong>MondoDB</strong>. 👨‍🎓</p>
+          <ul class="list">
+            <li><img src="./public/html.svg" height="75" width="75" alt="hypertext markup langauge logo"></li>
+            <li><img src="./public/css-min.svg" height="75" width="75" alt="cascading style sheets logo"></li>
+            <li><img src="./public/js.svg" height="75" width="75" alt="javascript logo"></li>
+            <li><img src="./public/php.svg" height="75" width="75" alt="php logo"></li>
+            <li style="align-self:flex-end;"><img src="./public/bootstrap.svg" height="61" width="61" alt="bootstrap logo"></li>
+            <li style="align-self:flex-end;"><img src="./public/github.svg" height="61" width="61" alt="github logo"></li>
+            <li style="align-self:flex-end;"><img src="./public/wordpress.svg" height="61" width="61" alt="wordpress logo"></li>
+            <li style="align-self:flex-end;"><img src="./public/react.svg" height="61" width="61" alt="react logo"></li>
+            <li style="align-self:flex-end;"><img src="./public/sass.svg" height="61" width="85" alt="syntactically awesome style sheets logo"></li>
+            <li style="align-self:flex-end;"><img src="./public/jquery.svg" height="61" width="61" alt="jquery logo"></li>
+            <li style="align-self:flex-end;"><img src="./public/mysql.svg" height="61" width="120" alt="mysql logo"></li>
+          </ul>
+        </article><!-- End of .toolkit -->
+      </section>
       <div id="contact" class="contact">
         <h2>Let's talk!</h2>
         <p>Want to colaborate? Or just want to know if I'm single 😉?<br>
         Just kidding here (I am, btw). But yeah, leave a message below and I'll repsond as soon as possible.</p>
         <form id="form" class="form" method="POST" >
           <div class="field">
-						<p class="email">E-mail address<span class="tooltip"></span></p>
+						<p class="email"><span>E-mail address</span><span class="tooltip"></span></p>
             <input type="email" name="email" maxlength="40">
           </div>
           <div class="msg-div">
-						<p class="msg">Message<span class="tooltip"></span></p>
+						<p class="msg"><span>Message</span><span class="tooltip"></span></p>
             <textarea name="comment" maxlength="300"></textarea>
           </div>
-          <input id="button" type="submit" name="send" value="Send">
+          <button id="button" type="submit"><span id="submitText">Send</span><img id="submitImage" src="./public/ajax-loader.gif" alt="roman struna's ajax loader gif" class="hide"></button>
         </form>
+      </div><!-- End of .contact -->
+      <div id="contact2" class="contact hide">
+        <p>Thank you for your massage.</p>
+        <p>Oh sorry, typo. I meant message.</p>
+        <p>Though to be completely honest I could really use a massage.</p>
+        <p>If you know any good places you could recommend, use the button below to submit another message.</p>
+        <button id="buttonNew">Send a new message</button>
       </div><!-- End of .contact -->
       <div class="footer">
         <p>Made with <span class="fas fa-music"></span>, <span class="fas fa-coffee"></span> and lots of <span class="required fas fa-heart"></span></p>
         <p>&copy; 2018 <span class="currentYear"></span> Roman Struna</p>
       </div><!-- End of .footer -->
       <div id="stickyButton" class="sticky-social sticky-base"><img id="shareButton" src="./public/more.svg" width="60" ><img id="shareClose" class="hide" src="./public/x.svg" width="60" ></div>
-      <div id="instaSticky" class="sticky-social sticky-animate"><a href="instagram" target="_blank"><img src="./public/insta.svg" width="50" ></a></div>
-      <div id="resumeSticky" class="sticky-social sticky-animate"><a href="resume" download target="_blank"><img src="./public/doc.svg" width="50"></a></div>
-      <div id="linkedSticky" class="sticky-social sticky-animate"><a href="https://www.linkedin.com/in/romanstruna/" target="_blank"><img src="./public//in.svg" width="50"></a></div>
-      <div id="gitSticky" class="sticky-social sticky-animate"><a href="https://github.com/RomchyFCC" target="_blank"><img src="./public/git.svg" width="50"></a></div>
+      <div id="instaSticky" class="sticky-social sticky-animate"><a href="https://www.instagram.com/romch.js/" target="_blank" rel="noopener noreferrer nofollow"><img src="./public/insta.svg" width="50" ></a></div>
+      <div id="resumeSticky" class="sticky-social sticky-animate"><a href="./public/files/Roman-Struna-full-stack-developer-RESUME.pdf" rel="noopener noreferrer" target="_blank"><img src="./public/doc.svg" width="50"></a></div>
+      <div id="linkedSticky" class="sticky-social sticky-animate"><a href="https://www.linkedin.com/in/romanstruna/" target="_blank" rel="noopener noreferrer nofollow"><img src="./public//in.svg" width="50"></a></div>
+      <div id="gitSticky" class="sticky-social sticky-animate"><a href="https://github.com/RomchyFCC" target="_blank" rel="noopener noreferrer nofollow"><img src="./public/git.svg" width="50"></a></div>
     </div><!-- End of .wrapper -->
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

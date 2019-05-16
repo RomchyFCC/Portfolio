@@ -140,7 +140,8 @@ $("form[name='formTwo']").submit(function(event) {
   if (textarea.val().length < 3 && !validateEmail(inputEmail.val())) {
     return;
   } else {
-    $('#loading2').removeClass('hide');
+    $('submitText').addClass('hide');
+    $('#submitImage').removeClass('hide');
     $('#button').attr('disabled', true);
     event.preventDefault();
     $.post("https://www.romanstruna.com/handlerequest.php",
@@ -152,14 +153,37 @@ $("form[name='formTwo']").submit(function(event) {
       var result = JSON.parse(data);
       console.log(result);
       if (result.status === "OK") {
+        $('submitText').removeClass('hide');
+        $('#submitImage').addClass('hide');
+        $('#button').attr('disabled', false);
       } else {
+        $('submitText').removeClass('hide');
+        $('#submitImage').addClass('hide');
+        $('#button').attr('disabled', false);
       }
     });
-    $('#loading2').addClass('hide');
-    $('#button').attr('disabled', false);
   }
 });
 /////////////////////////// event listeners ///////////////////////////
+/* function swoosh(e) {
+	e.preventDefault();
+	const anchor = document.querySelectorAll(".display-pick a");
+	anchor.forEach(anch => {
+		anch.classList.remove("fas");
+		anch.classList.add("far");
+	});
+
+	e.target.classList.add("fas");
+	if (e.target.id == 1) {
+		display.style.left = "0";
+	}
+	if (e.target.id == 2) {
+		display.style.left = "-960px";
+	}
+	if (e.target.id == 3) {
+		display.style.left = "-1920px";
+	}
+} */
 // sticky button
 button.on('click', function() {
   instagram.toggleClass('instagram-sticky');
@@ -175,8 +199,11 @@ button.on('click', function() {
   }
 })
 
-// submit button
-$('#button').on('click', e => {submit(e)});
+// button
+$('#buttonNew').on('click', function() {
+  $('contact').removeClass('hide');
+  $('contact2').addClass('hide');
+});
 
 // click listener to close the navbar
 $('body').on('click', () => {
@@ -267,32 +294,3 @@ $(document).ready(() => {
     $('.currentYear').html(' - ' + currentYear);
   }
 });
-
-/////////////////// typewritter effect
-/* var typeString = ['full-stack developer', 'small business owner'];
-      var  i = 0;
-      var count = 0
-      var selectedText = '';
-      var text = '';
-      (function type() {
-        if (count == typeString.length) {
-          count = 0;
-        }
-        selectedText = typeString[count];
-        text = selectedText.slice(0, ++i);
-        document.getElementById('typing').innerHTML = text;
-        if (text.length === selectedText.length) {
-          count++;
-          i = 0;
-        }
-        setTimeout(type, 200);
-      }());
-
-      function sleep(milliseconds) {
-        var start = new Date().getTime();
-        for (var i = 0; i < 1e7; i++) {
-          if ((new Date().getTime() - start) > milliseconds){
-            break;
-          }
-        }
-      } */
