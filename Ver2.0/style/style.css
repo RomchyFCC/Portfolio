@@ -202,7 +202,38 @@ li {
   color: #FFFFFF;
 }
 
-.title {
+#heroLetter1,
+#heroLetter2,
+#heroLetter3,
+#heroLetter4,
+#heroLetter5,
+#heroLetter6,
+#heroLetter7,
+#heroLetter8,
+#heroLetter9,
+#heroLetter10,
+#heroLetter11,
+#heroSubLetter1,
+#heroSubLetter2,
+#heroSubLetter3,
+#heroSubLetter4,
+#heroSubLetter5,
+#heroSubLetter6,
+#heroSubLetter7,
+#heroSubLetter8,
+#heroSubLetter9,
+#heroSubLetter10,
+#heroSubLetter11,
+#heroSubLetter12,
+#heroSubLetter13,
+#heroSubLetter14,
+#heroSubLetter15,
+#heroSubLetter16,
+#heroSubLetter17,
+#heroSubLetter18,
+#heroSubLetter19,
+#heroSubLetter20
+{
   opacity: 0;
 }
 
@@ -215,6 +246,9 @@ li {
   font-size: 2.7rem;
   letter-spacing: 7px;
   padding-top: 10px;
+}
+.title span {
+  font-family: "Source Code Pro", sans-serif;
 }
 
 @keyframes move {
@@ -250,6 +284,10 @@ li {
   max-width: 1000px;
   margin: 0 auto;
 }
+.toolkit p{
+  margin: 10px;
+}
+
 .about-flex {
   display: flex;
   align-items: center;
@@ -274,6 +312,10 @@ li {
 .summary p,
 .toolkit p {
   margin-bottom:20px;
+  text-align: left;
+}
+.toolkit p {
+  text-align: center;
 }
 .about .summary {
   max-width: 800px;
@@ -288,7 +330,11 @@ li {
   margin-top: 20px;
 }
 .toolkit .list li {
-  margin: 0 2px;
+  margin: 5px 2px;
+}
+.toolkit li.other-lis {
+  align-self:flex-end;
+  margin: 5px;
 }
 .dot {
   height: 10px;
@@ -540,7 +586,25 @@ li {
 }
 .contact .email {
   margin: 0;
+  top:40px;
+  height: 50px;
+  line-height: 50px;
 }
+
+.form .email.swoosh {
+  top: 14px;
+  font-size: 0.8rem;
+  z-index: 12;
+  line-height: 15px;
+  height: 15px;
+}
+.form .email.swoosh span{
+  background: #0D0F4A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #0D0F4A, #0D0F4A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #0D0F4A, #0D0F4A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0 2px;
+}
+
 
 
 .form {
@@ -579,25 +643,28 @@ li {
 .form .msg-div {
   grid-column: 1/3;
   margin-top: 20px;
+  position: relative;
 }
 
 .form #button {
   justify-self: end;
   grid-column: 2/3;
-  padding: 5px 75px;
+  padding: 10px 80px;
   border: none;
   transition: 0.2s;
-  background: #fff;
+  background: rgb(255, 255, 255);
   color: #0D0F49;
-  cursor: pointer;
+  cursor: not-allowed;
   margin-top:20px !important;
   font-size: 1rem;
   font-weight: 600;
+  border: 2px solid rgb(255, 255, 255);
 }
 
-.form #button:hover {
-  text-decoration: underline;
-  transform: scale(1.1);
+#contact .form .buttonClass:hover {
+  background: transparent !important;
+  color:#fff;
+  border: 2px solid #fff;
 }
 
 .form input, .form textarea {
@@ -614,7 +681,7 @@ li {
 .form textarea {
   position: relative;
   z-index: 1;
-  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Work Sans", sans-serif;
   width: 100%;
   height: 110px;
   resize: none;
@@ -630,17 +697,35 @@ li {
   position: absolute;
   color: #FFFFFF;
   right: 5px;
-  top: 17px;
+  top: 0;
   opacity: 0;
   transition: 0.2s;
+  font-size: 0.8rem;
+  line-height: 15px;
 }
-
+.msg-div .msg {
+  height: 50px;
+  line-height: 50px;
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
 .form p.swoosh {
   top: 0;
 }
 
 .form p.msg.swoosh {
-  top: 0;
+  top: -5px;
+  font-size: 0.8rem;
+  line-height: 15px;
+  height: 15px;
+  z-index: 15;
+}
+.form p.msg.swoosh span {
+  background: #150E44;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #150E44, #180F43);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #150E44, #180F43); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0 2px;
 }
 
 .form .swoosh .tooltip {
@@ -746,7 +831,12 @@ li {
   grid-template-columns: 1fr 1fr;
 }
 
-
+.footer-link {
+  color: brown;
+}
+.footer-link:hover {
+text-decoration: underline;
+}
 @media screen and (max-width: 970px) {
   .close p, .close a, .about p {
     font-size: 1.3rem;
@@ -762,6 +852,9 @@ li {
   .hero .list span {
     font-size: 3.2rem;
   }
+  .sub-header-hero-text {
+    font-size:2.4em;
+  }
 }
 
 @media screen and (max-width: 840px) {
@@ -769,14 +862,26 @@ li {
     font-size: 1.1rem;
     line-height: 1.6rem;
   }
+  .footer {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 720px) {
+  .footer {
+    padding-left: 100px;
+    padding-right: 25px;
+  }
   .about p {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-
+  .toolkit p {
+    text-align: left;
+  }
+  .sub-header-hero-text {
+    font-size: 1.8em;
+  }
   .title h1 {
     font-size: 3rem;
   }
@@ -806,10 +911,12 @@ li {
     width: 100%;
   }
 }
-
 @media screen and (max-width: 480px) {
   .form .type-div div {
     grid-template-columns: 1.5fr 2fr;
+  }
+  .sub-header-hero-text {
+    font-size: 1.2em;
   }
   .about,
   .contact,
@@ -833,9 +940,11 @@ li {
   .form p.swoosh {
     top: 5px;
   }
-  .form .msg-div p.swoosh {
-    top: 0px;
-  }
+  .form p.msg.swoosh span {
+    background: #1B0E41;
+    background: -webkit-linear-gradient(to bottom, #1B0E41, #1E0F40);
+    background: linear-gradient(to bottom, #1B0E41, #1E0F40);
+}
 }
 
 @media screen and (max-width: 360px) {
@@ -857,6 +966,9 @@ li {
   }
   .hero .list span {
     font-size: 2.4rem;
+  }
+  .sub-header-hero-text {
+    font-size: 1.07em;
   }
 }
 /*# sourceMappingURL=style.css.map */

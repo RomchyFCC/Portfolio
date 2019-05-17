@@ -1,3 +1,4 @@
+$(document).ready(() => {
 // variables
 const linkButton = document.querySelectorAll('.linkTo');
 const button = $('#stickyButton');
@@ -78,21 +79,25 @@ function checkLength(e) {
       $('.form .msg .tooltip').html(length + '/' + max);
 
       // check textarea input
-      length < 3 ? textarea.css('border-bottom-color', 'red') : textarea.css('border-bottom-color', '#2196f3');
+      length < 3 ? $('#textareaMessage').css('color', 'red') : $('#textareaMessage').css('color', '#fff');
       break;
 
     case 'email':
       // validate email input and update the counter
-      !validateEmail(e.target.value) ? item.css('border-bottom-color', 'red') : item.css('border-bottom-color', '#2196f3');
+      !validateEmail(e.target.value) ? $('#inputEmail').css('color', 'red') : $('#inputEmail').css('color', '#fff');
       $('.form .email .tooltip').html(length + '/' + max);
       break;
   }
 
   // check everything to let the user know if input is correct and they can proceed with submiting the information
   if (textarea.val().length > 2 && validateEmail(inputEmail.val())) {
-    $('#button').css('background-color', '#2196f3');
+    $('#button').css('cursor', 'pointer');
+    $('#button').addClass('buttonClass');
+    $('#button').attr('disabled', false);
   } else {
-    $('#button').css('background-color', 'red');
+    $('#button').css('cursor', 'not-allowed');
+    $('#button').removeClass('buttonClass');
+    $('#button').attr('disabled', true);
   }
 }
 
@@ -284,10 +289,22 @@ input.forEach(item => item.addEventListener('focusout', e => swooshRemove(e)));
 // navbar event listener
 window.addEventListener("scroll", debounce(checkNav, 10));
 
-$(document).ready(() => {
+
 
   // fade-in the title after load
-  $('.title').fadeTo(animationDuration + 1000, 1);
+  for (var k = 1; k <= 11; k++) {
+    animate(k);
+  }
+  function animate(number) {
+    $('#heroLetter'+number).fadeTo(400*number, 1)
+  }
+    // fade-in the title after load
+    for (var j = 1; j <= 20; j++) {
+      animateSub(j);
+    }
+    function animateSub(number) {
+      $('#heroSubLetter'+number).fadeTo(200*number, 1)
+    }
   
   // check current year and if it's above 2019, add copyright for that year
   if (currentYear > 2018) {
