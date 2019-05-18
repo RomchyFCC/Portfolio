@@ -367,7 +367,7 @@ li {
 }
 .projects {
   padding: 100px 50px;
-  background:  #4b6cb7;
+  background:  #182848;
   color: #FFFFFF;
 }
 
@@ -448,7 +448,7 @@ li {
   transition: background 0.4s;
 }
 .display-content {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
 }
 .info-box *{
   transition: all 0.2s;
@@ -457,10 +457,12 @@ li {
 .info-box.display-content * {
   opacity: 1;
   color: #212121;
+  text-align: left;
 }
 .info-box.display-content h3 {
   opacity: 0;
   color: #fff;
+  text-align: center;
 }
 .info-box h3 {
   opacity: 1;
@@ -468,49 +470,70 @@ li {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+  color: #fff;
+  width: 100%;
+}
+.info-box .info-box-header2 {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #182848;
+  margin-bottom: 10px;
+}
+.buttons {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.buttons .demo {
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  background: #182848;
+  color: #fff;
+  border: 2px solid #182848;
+}
+.buttons .demo:hover {
+  background: transparent;
+  color: #182848;
+}
+.info-box.display-content .link,
+.info-box .link {
+  color: #4b6cb7;
+}
+.link:hover {
+  text-decoration: underline;
 }
 #projectOne {
-  background: url("../public/projectOne.jpg");
+  background: url("../public/projectWLC.jpg");
 }
 
 #projectTwo {
-  background: url("../public/projectTwo.jpg");
+  background: url("../public/projectMjob.jpg");
 }
 
 #projectThree {
-  background: url("../public/projectThree.jpg");
+  background: url("../public/projectDungeon.jpg");
 }
 
 #projectFour {
-  background: url("../public/projectFour.jpg");
+  background: url("../public/projectREST.jpg");
 }
 
 #projectFive {
-  background: url("../public/projectFive.jpg");
+  background: url("../public/projectGOL.jpg");
 }
 
 #projectSix {
-  background: url("../public/projectSix.jpg");
+  background: url("../public/projectTOSF.jpg");
 }
 
 #projectSeven {
-  background: url("../public/projectSeven.jpg");
+  background: url("../public/projectCalc.jpg");
 }
 
 #projectEight {
-  background: url("../public/projectEight.jpg");
-}
-
-#projectNine {
-  background: url("../public/projectNine.jpg");
-}
-
-#projectTen {
-  background: url("../public/projectTen.png");
-}
-
-#projectEleven {
-  background: url("../public/projectEleven.png");
+  background: url("../public/projectSurprise.gif");
 }
 
 #projectOne,
@@ -520,10 +543,7 @@ li {
 #projectFive,
 #projectSix,
 #projectSeven,
-#projectEight,
-#projectNine,
-#projectTen,
-#projectEleven {
+#projectEight {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -1032,4 +1052,3 @@ li {
     font-size: 1.07em;
   }
 }
-/*# sourceMappingURL=style.css.map */
