@@ -1,3 +1,9 @@
+/* 
+Color Combos:  
+1D4350 A43931
+00d2ff 3a7bd5
+c21500 ffc500
+*/
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -42,10 +48,13 @@ li {
   top: 0;
   left: 0;
   display: block;
-  border: 2px solid #4b6cb7;
+  border: 2px solid #2196f3;
   cursor: pointer;
 }
 
+.required {
+  color: red;
+}
 .sub-header-hero-text {
   font-size: 3em;
   font-weight: 300;
@@ -153,9 +162,9 @@ li {
 }
 /* background: -webkit-linear-gradient(to bottom, #061161, #780206); */
 .hero {
-  background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000046;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #4E0828, #0D0F49, #0D0F49);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #4E0828, #0D0F49, #0D0F49); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   min-height: 500px;
   height: 100vh;
   width: 100%;
@@ -272,7 +281,7 @@ li {
 
 .about h2 {
   padding-bottom: 50px;
-  color: #182848;
+  color: #230D49;
   font-size: 1.8rem;
   text-transform: uppercase;
 }
@@ -351,23 +360,9 @@ li {
 .picked-dot {
   background: #FFFFFF;
 }
-#dot8 {
-  background: rgba(255, 0, 0, 0.3);
-}
-#dot8.picked-dot,
-#dot8:hover {
-  background: red;
-}
-.dot8 {
-  background: rgba(255, 0, 0, 0.3);
-}
-.dot8.picked-dot,
-.dot8:hover {
-  background: red;
-}
 .projects {
   padding: 100px 50px;
-  background:  #4b6cb7;
+  background:  #0D0F49;
   color: #FFFFFF;
 }
 
@@ -444,7 +439,7 @@ li {
   height: 100%;
   border: 2px solid white;
   padding:25px;
-  background: #4b6cb7;
+  background: #0D0F49;
   transition: background 0.4s;
 }
 .display-content {
@@ -547,7 +542,7 @@ li {
 
 .close .files a {
   transition: 0.2s;
-  background: #4b6cb7;
+  background: #2196f3;
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
@@ -568,9 +563,9 @@ li {
 }
 
 .contact {
-  background: #182848;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4b6cb7, #182848);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4b6cb7, #182848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4E0828;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #0D0F49, #0D0F49, #4E0828);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #0D0F49, #0D0F49, #4E0828); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-size: 1.5rem;
   line-height: 2rem;
   width: 100%;
@@ -584,7 +579,7 @@ li {
   font-size:1.8rem;
 }
 .contact p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
@@ -593,9 +588,9 @@ li {
   font-size: 1.1rem;
   line-height: 1.3rem;
   color: rgba(255, 255, 255, 0.6);
-  background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4b6cb7, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4b6cb7, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000046;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #180F43, #180E42);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #180F43, #180E42); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   z-index: 15;
   padding: 0 5px;
 }
@@ -621,9 +616,9 @@ li {
   height: 15px;
 }
 .form .email.swoosh span{
-  background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4b6cb7, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4b6cb7, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #0D0F4A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #0D0F4A, #0D0F4A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #0D0F4A, #0D0F4A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 0 2px;
 }
 
@@ -675,7 +670,7 @@ li {
   border: none;
   transition: 0.2s;
   background: rgb(255, 255, 255);
-  color: #4b6cb7;
+  color: #0D0F49;
   cursor: not-allowed;
   margin-top:20px !important;
   font-size: 1rem;
@@ -744,9 +739,9 @@ li {
   z-index: 15;
 }
 .form p.msg.swoosh span {
-  background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4b6cb7, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4b6cb7, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #150E44;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #150E44, #180F43);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #150E44, #180F43); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 0 2px;
 }
 
@@ -758,16 +753,19 @@ li {
   padding: 10px 0;
   border-top: 1px solid #FFFFFF;
   display: grid;
-  background: #212121;
+  background: #0D0F49;
   color: #FFFFFF;
 }
 
 .footer .fa-music {
-  color: #4b6cb7;
+  color: #2196f3;
 }
 
 #stickyFooter {
-  height: 100px;
+  background: #444;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, transparent, #0D0F4A, #0D0F4A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, transparent, #0D0F4A, #0D0F4A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 200px;
   width: 100%;
   position: fixed;
   bottom:0;
@@ -884,20 +882,8 @@ li {
   color: #fff;
 }
 .footer-link:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
-.arrow-image {
-  width: 50px;
-}
-@media screen and (min-width: 1335px) {
-  .stack {
-    max-width: 1300px;
-  }
-  .elements {
-    max-width: 1000px;
-  }
-}
-
 @media screen and (max-width: 970px) {
   .close p, .close a, .about p {
     font-size: 1.3rem;
@@ -1002,9 +988,9 @@ li {
     top: 5px;
   }
   .form p.msg.swoosh span {
-    background: #182848;
-    background: -webkit-linear-gradient(to bottom, #182848, #182848);
-    background: linear-gradient(to bottom, #182848, #182848);
+    background: #1B0E41;
+    background: -webkit-linear-gradient(to bottom, #1B0E41, #1E0F40);
+    background: linear-gradient(to bottom, #1B0E41, #1E0F40);
 }
 }
 
