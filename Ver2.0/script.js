@@ -12,10 +12,23 @@ $(document).ready(() => {
   const anchor = document.querySelectorAll(".dot");
   const display = document.getElementById('projectsDisplay');
   var globalLimitForProjects;
+  var elementLength;
   if (window.innerWidth < 1335) {
-    globalLimitForProjects = -3000;
+    if (window.innerWidth < 520) {
+      if (window.innerWidth < 365) {
+        globalLimitForProjects = -2100
+        elementLength = 300;
+      } else {
+        globalLimitForProjects = -2450
+        elementLength = 350;
+      }
+    } else {
+      elementLength = 500;
+      globalLimitForProjects = -3000;
+    }
   } else {
     globalLimitForProjects = -2500;
+    elementLength = 500;
     $('#dot7').addClass('hide');
   }
   
@@ -28,6 +41,7 @@ $(document).ready(() => {
   var checked5 = false;
   var checked6 = false;
   var checked7 = false;
+  var submitedBefore = false;
 
   const textarea = $('.form textarea');
   const inputEmail = $('input[name="email"]');
@@ -36,7 +50,7 @@ $(document).ready(() => {
   const pMail = document.querySelector('.email');
   const pMsg = document.querySelector('.msg');
 
-  $("form[name='formTwo']").submit(function(event) {
+  $("#form").submit(function(event) {
     event.preventDefault();
     error = false;
 
@@ -55,19 +69,33 @@ $(document).ready(() => {
       $('#submitImage').removeClass('hide');
       $('#button').attr('disabled', true);
       $('#button').css('cursor', 'wait');
-      $.post("https://www.romanstruna.com/handlerequest.php",
+      $.post("https://www.romanstruna.com/test-12x34/handlerequest.php",
       {
         email: inputEmail.val(),
         text: textarea.val(),
       },
-      function(data, status){
+      function(data){
         var result = JSON.parse(data);
-        console.log(result);
-        if (result.status === "OK") {
+        if (result.result === "OK") {
+          if (submitedBefore === false) {
+            submitedBefore = true;
+            $('#contactDiv').animate({'opacity': 0}, animationDuration/4, function() {
+              $('#contactDiv').addClass('hide');
+              $('#contact2').removeClass('hide');
+            });
+            $('#contact2').animate({'opacity': 1}, animationDuration/4);
+            textarea.val('');
+          } else {
+            $('#contactDiv').animate({'opacity': 0}, animationDuration/4, function() {
+              $('#contactDiv').addClass('hide');
+              $('#contact3').removeClass('hide');
+            });
+            $('#contact3').animate({'opacity': 1}, animationDuration/4);
+            textarea.val('');
+          }
           $('submitText').removeClass('hide');
           $('#submitImage').addClass('hide');
-          $('#button').attr('disabled', false);
-          $('#button').css('cursor', 'pointer');
+          $('#button').css('cursor', 'not-allowed');
         } else {
           $('submitText').removeClass('hide');
           $('#submitImage').addClass('hide');
@@ -98,8 +126,11 @@ $(document).ready(() => {
 
   // button
   $('#buttonNew').on('click', function() {
-    $('contact').removeClass('hide');
-    $('contact2').addClass('hide');
+    $('#contact2').animate({'opacity': 0}, animationDuration/4, function() {
+      $('#contact2').addClass('hide');
+      $('#contactDiv').removeClass('hide');
+    });
+    $('#contactDiv').animate({'opacity': 1}, animationDuration/4);
   });
 
   // click listener to close the navbar
@@ -107,6 +138,15 @@ $(document).ready(() => {
     if ($('.flex-nav').css('right') === '0px'){
       $('#burger-container').removeClass('open');
       $('.flex-nav').removeClass('open');
+      $('.normal-nav').removeClass('scroll2');
+    }
+    if (instagram.css('opacity') === "1") {
+      $('#shareButton').removeClass('hide');
+      $('#shareClose').addClass('hide');
+      instagram.removeClass('instagram-sticky');
+      linked.removeClass('linkedin-sticky');
+      resume.removeClass('resume-sticky');
+      github.removeClass('github-sticky');
     }
   });
 
@@ -115,6 +155,7 @@ $(document).ready(() => {
     $('#burger-container').toggleClass('open');
     $('.flex-nav').toggleClass('open');
     $('.normal-nav').addClass('scroll');
+    $('.normal-nav').toggleClass('scroll2');
     $('#shareClose').addClass('scroll-more');
     $('#stickyButton').addClass('scroll-more');
     $('#instaSticky').addClass('scroll-more');
@@ -136,14 +177,14 @@ $(document).ready(() => {
   linkButton.forEach(link => link.addEventListener('click', (e) => {
     e.preventDefault();
     switch(link.innerHTML) {
-      case 'who am i?':
+      case 'Who am I?':
         $('html, body').animate({'scrollTop': $('#about').offset().top - navHeight}, animationDuration);
         break;
-      case 'what i do?':
+      case 'Projects':
         $('html, body').animate({'scrollTop': $('#projects').offset().top - navHeight}, animationDuration);
         break;
-      case 'contact': 
-        $('html, body').animate({'scrollTop': $('#'+link.innerHTML).offset().top - navHeight}, animationDuration);
+      case 'Contact': 
+        $('html, body').animate({'scrollTop': $('#contact').offset().top - navHeight}, animationDuration);
         break;
       default:
         if(link.getAttribute('data-pos') === 'about') {
@@ -196,13 +237,13 @@ $(document).ready(() => {
 
   // swipe events 
   $("#projectsDisplay").touchwipe({
-    wipeLeft: function() { alert("left"); },
-    wipeRight: function() { alert("right"); },
-    wipeUp: function() { alert("up"); },
-    wipeDown: function() { alert("down"); },
+    wipeLeft: function() { prevNextProjectSwipe('left') },
+    wipeRight: function() { prevNextProjectSwipe('right') },
+    //wipeUp: function() { alert("up"); },
+    //wipeDown: function() { alert("down"); },
     min_move_x: 20,
     min_move_y: 20,
-    preventDefaultEvents: true
+    preventDefaultEvents: false
   });
   // fade-in the title after load
   for (var k = 1; k <= 11; k++) {
@@ -342,25 +383,38 @@ $(document).ready(() => {
       default:
         break;
     }
-    if(!$('#project'+numberInSpanish).hasClass('mouseover') && ($('#project'+numberInSpanish+' .element-image').css('top') === '0px' || $('#project'+numberInSpanish+' .info-box').css('top') === '0px')) {
+    if(!$('#project'+numberInSpanish).hasClass('mouseover') && ($('#project'+numberInSpanish+' .element-image').css('opacity') === '1' || $('#project'+numberInSpanish+' .info-box').css('opacity') === '0')) {
       $('#project'+numberInSpanish).addClass('mouseover');
-      $('#project'+numberInSpanish+' .element-image').animate({'top': '-300px', 'z-index': 0}, animationDuration/4);
-      $('#project'+numberInSpanish+' .info-box').animate({'top': '300px', 'z-index': 50}, animationDuration/4);
+      $('#project'+numberInSpanish+' .element-image').animate({'opacity': 0.5}, animationDuration/4);
+      $('#project'+numberInSpanish+' .info-box').animate({'z-index': 50, 'opacity': 0.5}, animationDuration/4);
       $('#project'+numberInSpanish+' .info-box').addClass('display-content');
-      $('#project'+numberInSpanish+' .element-image').animate({'top': 0}, animationDuration/4);
-      $('#project'+numberInSpanish+' .info-box').animate({'top': 0, 'background': '#fff'}, animationDuration/4);
+      $('#project'+numberInSpanish+' .element-image').animate({'opacity': 1}, animationDuration/4);
+      $('#project'+numberInSpanish+' .info-box').animate({'background': '#fff', 'opacity': 1}, animationDuration/4);
     }
     if (checked1 === true && checked2 === true && checked3 === true && checked4 === true && checked5 === true && checked6 === true && checked7 === true) {
-      $('#projectsDisplay').css({'width': '4000px'});
+      
       $('#projectOcho').removeClass('hide');
       
       if (window.innerWidth < 1335) {
-        globalLimitForProjects = -3500;
+        if (window.innerWidth < 520) {
+          if (window.innerWidth < 365) {
+            $('#projectsDisplay').css({'width': '2400px'});
+            globalLimitForProjects = -2100;
+          } else {
+            $('#projectsDisplay').css({'width': '2800px'});
+            globalLimitForProjects = -2450;
+          }
+        } else {
+          $('#projectsDisplay').css({'width': '4000px'});
+          globalLimitForProjects = -3500;
+        }
+        
         $('#dot8').removeClass('hide');
       } else {
         $('#dot7').addClass('dot8');
         $('#dot7').removeClass('hide');
         globalLimitForProjects = -3000;
+        $('#projectsDisplay').css({'width': '4000px'});
       }
       
     }
@@ -370,11 +424,11 @@ $(document).ready(() => {
   function onleave(numberInSpanish) {
     if($('#project'+numberInSpanish).hasClass('mouseover')) {
       $('#project'+numberInSpanish).removeClass('mouseover');
-      $('#project'+numberInSpanish+' .element-image').animate({'top': '-300px', 'z-index': 50}, animationDuration/4);
-      $('#project'+numberInSpanish+' .info-box').animate({'top': '300px', 'z-index': 0}, animationDuration/4);
+      $('#project'+numberInSpanish+' .element-image').animate({'opacity': 0.5}, animationDuration/4);
+      $('#project'+numberInSpanish+' .info-box').animate({'z-index': 0,'opacity': 0.5}, animationDuration/4);
       $('#project'+numberInSpanish+' .info-box').removeClass('display-content');
-      $('#project'+numberInSpanish+' .element-image').animate({'top': 0}, animationDuration/4);
-      $('#project'+numberInSpanish+' .info-box').animate({'top': 0, 'background': '#0D0F49'}, animationDuration/4);
+      $('#project'+numberInSpanish+' .element-image').animate({'opacity': 1}, animationDuration/4);
+      $('#project'+numberInSpanish+' .info-box').animate({'background': '#0D0F49','opacity': 1}, animationDuration/4);
     }
   }
 
@@ -385,7 +439,7 @@ $(document).ready(() => {
     }
     if (e.target.id === 'leftArrow') {
       if (parseInt(display.style.left) < 0) {
-        display.style.left = (parseInt(display.style.left) + 500)+'px';
+        display.style.left = (parseInt(display.style.left) + elementLength)+'px';
         dotInt = parseInt($('.picked-dot').attr('id').charAt(3))-1;
         anchor.forEach(anch => {
           anch.classList.remove('picked-dot');
@@ -395,7 +449,32 @@ $(document).ready(() => {
     }
     if (e.target.id === 'rightArrow') {
       if (parseInt(display.style.left) > globalLimitForProjects) {
-        display.style.left = (parseInt(display.style.left) - 500)+'px';
+        display.style.left = (parseInt(display.style.left) - elementLength)+'px';
+        dotInt = parseInt($('.picked-dot').attr('id').charAt(3))+1;
+        anchor.forEach(anch => {
+          anch.classList.remove('picked-dot');
+        });
+        $('#dot'+dotInt).addClass('picked-dot')
+      }
+    }
+  }
+  function prevNextProjectSwipe(swipe) {
+    if (display.style.left === '') {
+      display.style.left = '0px';
+    }
+    if (swipe === 'right') {
+      if (parseInt(display.style.left) < 0) {
+        display.style.left = (parseInt(display.style.left) + elementLength)+'px';
+        dotInt = parseInt($('.picked-dot').attr('id').charAt(3))-1;
+        anchor.forEach(anch => {
+          anch.classList.remove('picked-dot');
+        });
+        $('#dot'+dotInt).addClass('picked-dot')
+      }
+    }
+    if (swipe === 'left') {
+      if (parseInt(display.style.left) > globalLimitForProjects) {
+        display.style.left = (parseInt(display.style.left) - elementLength)+'px';
         dotInt = parseInt($('.picked-dot').attr('id').charAt(3))+1;
         anchor.forEach(anch => {
           anch.classList.remove('picked-dot');
@@ -415,25 +494,25 @@ $(document).ready(() => {
       display.style.left = "0";
     }
     if (e.target.id == 'dot2') {
-      display.style.left = "-500px";
+      display.style.left = "-"+(elementLength)+"px";
     }
     if (e.target.id == 'dot3') {
-      display.style.left = "-1000px";
+      display.style.left = "-"+(elementLength*2)+"px";
     }
     if (e.target.id == 'dot4') {
-      display.style.left = "-1500px";
+      display.style.left = "-"+(elementLength*3)+"px";
     }
     if (e.target.id == 'dot5') {
-      display.style.left = "-2000px";
+      display.style.left = "-"+(elementLength*4)+"px";
     }
     if (e.target.id == 'dot6') {
-      display.style.left = "-2500px";
+      display.style.left = "-"+(elementLength*5)+"px";
     }
     if (e.target.id == 'dot7') {
-      display.style.left = "-3000px";
+      display.style.left = "-"+(elementLength*6)+"px";
     }
     if (e.target.id == 'dot8') {
-      display.style.left = "-3500px";
+      display.style.left = "-"+(elementLength*7)+"px";
     }
   }
 

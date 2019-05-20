@@ -32,7 +32,6 @@ li {
   padding: 15px;
   display: inline-block;
   color: #FFFFFF;
-  text-transform: capitalize;
   transition: 0.3s;
 }
 
@@ -53,7 +52,7 @@ li {
 }
 .normal-nav {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   position: fixed;
   height: 75px;
   padding: 10px 20px;
@@ -61,7 +60,7 @@ li {
   /* background: rgba(33, 33, 33, 0.2); */
   /* border-bottom: 1px solid #f5f5f5; */
   align-items: center;
-  z-index: 5;
+  z-index: 500;
   transition: all 0.2s;
 }
 
@@ -76,13 +75,14 @@ li {
 }
 
 .normal-nav ul.list a:hover {
-  text-decoration: underline;
   transform: scale(1.2);
 }
 
 .scroll {
   background: rgba(33, 33, 33, 0.5);
-  border-bottom: 1px solid #f5f5f5;
+}
+.scroll2 {
+  background: rgba(33, 33, 33, 0.8);
 }
 
 .flex-nav {
@@ -93,7 +93,6 @@ li {
   width: 100%;
   background: rgba(33, 33, 33, 0.5);
   transition: 0.2s;
-  border-bottom: 1px solid #f5f5f5;
 }
 
 .flex-nav li {
@@ -101,17 +100,19 @@ li {
 }
 
 .flex-nav li a {
-  text-transform: capitalize;
   color: #FFFFFF;
+  font-size: 1rem;
+  width: 100%;
+  display: block;
 }
 
 .flex-nav li:hover {
-  text-decoration: underline;
   transform: scale(1.2);
 }
 
 .flex-nav.open {
   right: 0;
+  background: rgba(33, 33, 33, 0.8);
 }
 
 #burger-container {
@@ -130,13 +131,12 @@ li {
   background: #fff;
   display: block;
   width: 40px;
-  height: 7px;
-  margin-bottom: 10px;
+  height: 3px;
+  margin-bottom: 14px;
   position: relative;
   top: 0;
   transition: all ease-in-out 0.2s;
 }
-
 #burger-container.open span:nth-child(2) {
   width: 0;
   opacity: 0;
@@ -154,8 +154,8 @@ li {
 /* background: -webkit-linear-gradient(to bottom, #061161, #780206); */
 .hero {
   background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, #4b6cb7, #182848);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #4b6cb7, #182848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   min-height: 500px;
   height: 100vh;
   width: 100%;
@@ -434,7 +434,8 @@ li {
   height: 400px;
   margin: 50px 0;
   background: transparent;
-  z-index: 50;
+  z-index: 25;
+  opacity: 1;
 }
 .info-box {
   position: absolute;
@@ -442,10 +443,11 @@ li {
   width: 400px;
   left: 50px;
   height: 100%;
-  border: 2px solid white;
+  border: 1px solid white;
   padding:25px;
-  background: #4b6cb7;
+  background: transparent;
   transition: background 0.4s;
+  opacity: 1;
 }
 .display-content {
   background: rgba(255,255,255,0.95);
@@ -463,8 +465,11 @@ li {
   opacity: 0;
   color: #fff;
   text-align: center;
+  font-family: "Source Code Pro", sans-serif;
+  font-weight: 300;
 }
 .info-box h3 {
+  font-family: "Source Code Pro", sans-serif;
   opacity: 1;
   position: absolute;
   bottom: 10px;
@@ -472,12 +477,13 @@ li {
   transform: translateX(-50%);
   color: #fff;
   width: 100%;
+  font-weight: 300;
 }
 .info-box .info-box-header2 {
   font-size: 1.1rem;
   text-align: center;
   color: #182848;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .buttons {
   position: absolute;
@@ -545,7 +551,12 @@ li {
 #projectSeven,
 #projectEight {
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-position: top center;
+}
+#projectFour,
+#projectSeven,
+#projectEight {
+  background-size: cover;
 }
 
 .close {
@@ -588,9 +599,9 @@ li {
 }
 
 .contact {
-  background: #182848;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4b6cb7, #182848);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4b6cb7, #182848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4b6cb7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-size: 1.5rem;
   line-height: 2rem;
   width: 100%;
@@ -614,8 +625,8 @@ li {
   line-height: 1.3rem;
   color: rgba(255, 255, 255, 0.6);
   background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4b6cb7, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4b6cb7, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, #31497E, #30487D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #31497E, #30487D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   z-index: 15;
   padding: 0 5px;
 }
@@ -632,7 +643,14 @@ li {
   height: 50px;
   line-height: 50px;
 }
-
+#form {
+  opacity: 1;
+}
+#contact2,
+#contact3 {
+  opacity: 0;
+  background: transparent;
+}
 .form .email.swoosh {
   top: 14px;
   font-size: 0.8rem;
@@ -642,8 +660,8 @@ li {
 }
 .form .email.swoosh span{
   background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4b6cb7, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4b6cb7, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, #31497E, #30487D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #31497E, #30487D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 0 2px;
 }
 
@@ -692,30 +710,28 @@ li {
   justify-self: end;
   grid-column: 2/3;
   padding: 10px 80px;
-  border: none;
   transition: 0.2s;
-  background: rgb(255, 255, 255);
-  color: #4b6cb7;
+  background: #fff;
+  color: #182848;
   cursor: not-allowed;
   margin-top:20px !important;
   font-size: 1rem;
   font-weight: 600;
-  border: 2px solid rgb(255, 255, 255);
+  border: 1px solid #fff;
 }
 
 #contact .form .buttonClass:hover {
   background: transparent !important;
   color:#fff;
-  border: 2px solid #fff;
 }
 
 .form input, .form textarea {
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 2rem;
   padding-left: 5px;
   color: #FFFFFF;
   border: none;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   background: rgba(0, 0, 0, 0);
   z-index: 1;
 }
@@ -765,8 +781,8 @@ li {
 }
 .form p.msg.swoosh span {
   background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4b6cb7, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4b6cb7, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, #38538E, #38538F);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #38538E, #38538F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 0 2px;
 }
 
@@ -775,11 +791,12 @@ li {
 }
 
 .footer {
-  padding: 10px 0;
-  border-top: 1px solid #FFFFFF;
+  padding: 30px 0;
   display: grid;
   background: #212121;
   color: #FFFFFF;
+  font-weight: 300;
+  font-size: 0.8rem;
 }
 
 .footer .fa-music {
@@ -788,17 +805,17 @@ li {
 
 #stickyFooter {
   height: 100px;
-  width: 100%;
   position: fixed;
   bottom:0;
   transition: all 0.3s;
-  z-index: 10;
+  z-index: 100;
 }
 #footerArrowText {
   color: #fff;
   position: absolute;
   bottom: 18px;
   left:110px;
+  cursor: pointer;
   font-size: 3rem;
   animation: moveLeftnRight 0.75s infinite linear;
 }
@@ -824,7 +841,7 @@ li {
   border-radius: 100px;
   width: 50px;
   height: 50px;
-  z-index:15;
+  z-index:150;
 }
 .scroll-more {
   background:url('../public/60background.svg');
@@ -841,7 +858,7 @@ li {
 .sticky-base {
   width:60px;
   height: 60px;
-  z-index: 25;
+  z-index: 250;
 }
 .sticky-social a {
   color: #212121;
@@ -909,6 +926,21 @@ li {
 .arrow-image {
   width: 50px;
 }
+#buttonNew {
+  padding: 10px 30px;
+  background: rgb(255, 255, 255);
+  color: #4b6cb7;
+  margin-top:20px !important;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#buttonNew:hover {
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
 @media screen and (min-width: 1335px) {
   .stack {
     max-width: 1300px;
@@ -946,6 +978,18 @@ li {
   .footer {
     font-size: 14px;
   }
+  .arrow-image {
+    width: 25px;
+  }
+  .projects .right-arrow {
+    margin-left: 25px;
+  }
+  .projects .left-arrow {
+    margin-right: 25px;
+  }
+  .projects .left-arrow, .projects .right-arrow {
+    width: 25px;
+  }
 }
 
 @media screen and (max-width: 720px) {
@@ -979,7 +1023,30 @@ li {
     padding: 50px 35px;
   }
 }
-
+@media screen and (max-width: 690px) {
+  .arrow-image {
+    z-index: 50;
+    width: 50px;
+  }
+  .projects .right-arrow {
+    margin-left: -50px;
+    z-index: 65;
+    background: rgb(24, 40, 72, 0.5);
+    width: 50px;
+    display: flex;
+    align-content: center;
+    height: 400px;
+  }
+  .projects .left-arrow {
+    margin-right: -50px;
+    z-index: 65;
+    width: 50px;
+    background: rgb(24, 40, 72, 0.5);
+    display: flex;
+    align-content: center;
+    height: 400px;
+  }
+}
 @media screen and (max-width: 600px) {
   .normal-nav .list {
     display: none;
@@ -991,6 +1058,33 @@ li {
   .projects .stack {
     width: 100%;
   }
+  .projects {
+    padding: 50px 0;
+  }
+}
+@media screen and (max-width: 519px) {
+  .stack {
+    max-width: 350px;
+  }
+  .elements {
+    max-width: 350px;
+  }
+  .element {
+    max-width: 350px;
+  }
+  .elements-two {
+    width: 2450px
+  }
+  .info-box {
+    left: 0;
+    width: 350px;
+  }
+  .projects .arrow {
+    display:none;
+  }
+  .buttons .demo {
+    width: 250px;
+  }
 }
 @media screen and (max-width: 480px) {
   .form .type-div div {
@@ -1000,8 +1094,7 @@ li {
     font-size: 1.2em;
   }
   .about,
-  .contact,
-  .projects {
+  .contact {
     padding: 50px 15px;
   }
   .title h1 {
@@ -1021,13 +1114,25 @@ li {
   .form p.swoosh {
     top: 5px;
   }
-  .form p.msg.swoosh span {
-    background: #182848;
-    background: -webkit-linear-gradient(to bottom, #182848, #182848);
-    background: linear-gradient(to bottom, #182848, #182848);
 }
+@media screen and (max-width: 364px) {
+  .stack {
+    max-width: 300px;
+  }
+  .elements {
+    max-width: 300px;
+  }
+  .element {
+    max-width: 300px;
+  }
+  .elements-two {
+    width: 2100px
+  }
+  .info-box {
+    left: 0;
+    width: 300px;
+  }
 }
-
 @media screen and (max-width: 360px) {
   .title h1 {
     font-size: 1.75rem;
