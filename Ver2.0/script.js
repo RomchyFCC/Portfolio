@@ -13,13 +13,15 @@ $(document).ready(() => {
   const display = document.getElementById('projectsDisplay');
   var globalLimitForProjects;
   var elementLength;
-  if (window.innerWidth < 1335) {
+  var twoElems = false;
+  var oneElem = false;
+  if (window.innerWidth < 1350) {
     if (window.innerWidth < 520) {
       if (window.innerWidth < 365) {
-        globalLimitForProjects = -2100
+        globalLimitForProjects = -1800
         elementLength = 300;
       } else {
-        globalLimitForProjects = -2450
+        globalLimitForProjects = -2100
         elementLength = 350;
       }
     } else {
@@ -27,11 +29,12 @@ $(document).ready(() => {
       globalLimitForProjects = -3000;
     }
   } else {
-    globalLimitForProjects = -2500;
-    elementLength = 500;
+    globalLimitForProjects = -2650;
+    elementLength = 530;
     $('#dot7').addClass('hide');
+    twoElems = true;
   }
-  
+  var wait = false;
   var dotInt;
   var clickedShare = false;
   var checked1 = false;
@@ -79,18 +82,18 @@ $(document).ready(() => {
         if (result.result === "OK") {
           if (submitedBefore === false) {
             submitedBefore = true;
-            $('#contactDiv').animate({'opacity': 0}, animationDuration/4, function() {
+            $('#contactDiv').animate({'opacity': 0, 'left': '-1000px'}, animationDuration/4, function() {
               $('#contactDiv').addClass('hide');
               $('#contact2').removeClass('hide');
             });
-            $('#contact2').animate({'opacity': 1}, animationDuration/4);
+            $('#contact2').animate({'opacity': 1, 'left': 0}, animationDuration/4);
             textarea.val('');
           } else {
-            $('#contactDiv').animate({'opacity': 0}, animationDuration/4, function() {
+            $('#contactDiv').animate({'opacity': 0, 'left': '-1000px'}, animationDuration/4, function() {
               $('#contactDiv').addClass('hide');
               $('#contact3').removeClass('hide');
             });
-            $('#contact3').animate({'opacity': 1}, animationDuration/4);
+            $('#contact3').animate({'opacity': 1, 'left': 0}, animationDuration/4);
             textarea.val('');
           }
           $('submitText').removeClass('hide');
@@ -126,11 +129,11 @@ $(document).ready(() => {
 
   // button
   $('#buttonNew').on('click', function() {
-    $('#contact2').animate({'opacity': 0}, animationDuration/4, function() {
+    $('#contact2').animate({'opacity': 0, 'left': '1000px'}, animationDuration/4, function() {
       $('#contact2').addClass('hide');
       $('#contactDiv').removeClass('hide');
     });
-    $('#contactDiv').animate({'opacity': 1}, animationDuration/4);
+    $('#contactDiv').animate({'opacity': 1, 'left': 0}, animationDuration/4);
   });
 
   // click listener to close the navbar
@@ -177,7 +180,7 @@ $(document).ready(() => {
   linkButton.forEach(link => link.addEventListener('click', (e) => {
     e.preventDefault();
     switch(link.innerHTML) {
-      case 'Who am I?':
+      case 'About me':
         $('html, body').animate({'scrollTop': $('#about').offset().top - navHeight}, animationDuration);
         break;
       case 'Projects':
@@ -383,7 +386,8 @@ $(document).ready(() => {
       default:
         break;
     }
-    if(!$('#project'+numberInSpanish).hasClass('mouseover') && ($('#project'+numberInSpanish+' .element-image').css('opacity') === '1' || $('#project'+numberInSpanish+' .info-box').css('opacity') === '0')) {
+    if(!$('#project'+numberInSpanish).hasClass('mouseover') && !wait) {
+      //wait = true;
       $('#project'+numberInSpanish).addClass('mouseover');
       $('#project'+numberInSpanish+' .element-image').animate({'opacity': 0.5}, animationDuration/4);
       $('#project'+numberInSpanish+' .info-box').animate({'z-index': 50, 'opacity': 0.5}, animationDuration/4);
@@ -392,10 +396,8 @@ $(document).ready(() => {
       $('#project'+numberInSpanish+' .info-box').animate({'background': '#fff', 'opacity': 1}, animationDuration/4);
     }
     if (checked1 === true && checked2 === true && checked3 === true && checked4 === true && checked5 === true && checked6 === true && checked7 === true) {
-      
-      $('#projectOcho').removeClass('hide');
-      
-      if (window.innerWidth < 1335) {
+      if (window.innerWidth < 1350) {
+        oneElem = true;
         if (window.innerWidth < 520) {
           if (window.innerWidth < 365) {
             $('#projectsDisplay').css({'width': '2400px'});
@@ -413,10 +415,11 @@ $(document).ready(() => {
       } else {
         $('#dot7').addClass('dot8');
         $('#dot7').removeClass('hide');
-        globalLimitForProjects = -3000;
-        $('#projectsDisplay').css({'width': '4000px'});
+        globalLimitForProjects = -3180;
+        $('#projectsDisplay').css({'width': '4240px'});
+        twoElems = false;
       }
-      
+      $('#projectOcho').removeClass('hide');
     }
   }
 
@@ -445,6 +448,20 @@ $(document).ready(() => {
           anch.classList.remove('picked-dot');
         });
         $('#dot'+dotInt).addClass('picked-dot')
+      } else if (parseInt(display.style.left) === 0) {
+        display.style.left = globalLimitForProjects+'px';
+        anchor.forEach((anch, key) => {
+          anch.classList.remove('picked-dot');
+          if (key === anchor.length - 1) {
+            if (twoElems) {
+              $('#dot'+(key - 1)).addClass('picked-dot')
+            } else  if (oneElem) {
+              $('#dot'+(key + 1)).addClass('picked-dot')
+            } else {
+              $('#dot'+key).addClass('picked-dot')
+            }
+          }
+        });
       }
     }
     if (e.target.id === 'rightArrow') {
@@ -455,6 +472,12 @@ $(document).ready(() => {
           anch.classList.remove('picked-dot');
         });
         $('#dot'+dotInt).addClass('picked-dot')
+      } else if (parseInt(display.style.left) === globalLimitForProjects) {
+        display.style.left = '0';
+        anchor.forEach(anch => {
+          anch.classList.remove('picked-dot');
+        });
+        $('#dot1').addClass('picked-dot')
       }
     }
   }
@@ -470,6 +493,20 @@ $(document).ready(() => {
           anch.classList.remove('picked-dot');
         });
         $('#dot'+dotInt).addClass('picked-dot')
+      } else if (parseInt(display.style.left) === 0) {
+        display.style.left = globalLimitForProjects+'px';
+        anchor.forEach((anch, key) => {
+          anch.classList.remove('picked-dot');
+          if (key === anchor.length - 1) {
+            if (twoElems) {
+              $('#dot'+(key - 1)).addClass('picked-dot')
+            } else if (oneElem) {
+              $('#dot'+(key + 1)).addClass('picked-dot')
+            } else {
+              $('#dot'+key).addClass('picked-dot')
+            }
+          }
+        });
       }
     }
     if (swipe === 'left') {
@@ -480,6 +517,12 @@ $(document).ready(() => {
           anch.classList.remove('picked-dot');
         });
         $('#dot'+dotInt).addClass('picked-dot')
+      } else if (parseInt(display.style.left) === globalLimitForProjects) {
+        display.style.left = '0';
+        anchor.forEach(anch => {
+          anch.classList.remove('picked-dot');
+        });
+        $('#dot1').addClass('picked-dot')
       }
     }
   }
