@@ -1,3 +1,6 @@
+:root {
+  font-size:16px;
+}
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -7,7 +10,6 @@
 
 body {
   font-family: "Work Sans", sans-serif;
-  font-size: 16px;
   min-width: 290px;
   text-align: center;
   color: #212121;
@@ -23,9 +25,6 @@ li {
 
 .list {
   display: flex;
-  flex: auto;
-  justify-self: center;
-  align-self: center;
 }
 
 .list a {
@@ -41,8 +40,8 @@ li {
   font-family: 'Source Code Pro', monospace;
 }
 .normal-nav {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  justify-content: space-between;
   position: fixed;
   height: 75px;
   padding: 10px 20px;
@@ -153,24 +152,13 @@ li {
   min-height: 500px;
   height: 100vh;
   width: 100%;
-  display: grid;
-  grid-template-areas: "."
- "."
- "title"
- "."
- "next";
-}
-
-.hero .title {
-  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .hero .list li {
   padding: 0 20px;
-}
-
-.hero .next {
-  grid-area: next;
 }
 
 .list span:hover, .next img:hover {
@@ -187,10 +175,8 @@ li {
 }
 
 .title, .next {
-  display: grid;
-  justify-items: center;
-  align-content: center;
   color: #FFFFFF;
+  align-self: stretch;
 }
 
 #heroLetter1,
@@ -242,7 +228,7 @@ li {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-35px);
+    transform: translateY(35px);
   }
   100% {
     transform: translateY(0px);
@@ -579,9 +565,9 @@ li {
   font-size: 1.1rem;
   line-height: 1.3rem;
   color: rgba(255, 255, 255, 0.6);
-  background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #31497E, #30487D);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #31497E, #30487D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #2F487C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #324C83, #2F487C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #324C83, #2F487C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   z-index: 15;
   padding: 0 5px;
 }
@@ -589,15 +575,8 @@ li {
 .contact form {
   width: 80%;
   margin: 0 auto;
-  margin-top:25px;
+  margin-top:50px;
   max-width: 1000px;
-}
-.contact .email {
-  margin: 0;
-  top:40px;
-  height: 50px;
-  line-height: 50px;
-  color: #FFFFFF;
 }
 #contactDiv {
   opacity: 1;
@@ -612,70 +591,27 @@ li {
   position: relative;
   left:1000px;
 }
-.form .email.swoosh {
-  top: 14px;
-  font-size: 0.8rem;
-  z-index: 12;
-  line-height: 15px;
-  height: 15px;
-}
-.form .email.swoosh span{
-  background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #31497E, #30487D);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #31497E, #30487D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  padding: 0 2px;
-}
-
-
-
-.form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-}
 
 .form div p {
-  top: 30px;
   padding-left: 5px;
   position: relative;
   text-align: left;
-  align-self: center;
   transition: 0.2s;
 }
-.msg span,
-.email span {
-  top: 30px;
-}
+
+.form .msg-div,
 .form .field {
-  display: grid;
-  grid-template-rows: 30px 50px;
-}
-
-.form .type-div div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-
-.form .type-div div span > * {
-  cursor: pointer;
-}
-
-.form .msg-div {
-  grid-column: 1/3;
   margin-top: 20px;
   position: relative;
 }
 
-.form #button {
-  justify-self: end;
-  grid-column: 2/3;
+body .form #button {
   padding: 10px 80px;
   transition: 0.2s;
   background: #FFFFFF;
   color: #182848;
   cursor: not-allowed;
-  margin-top:20px !important;
+  margin-top:50px;
   font-size: 1rem;
   font-weight: 600;
   border: 1px solid #FFFFFF;
@@ -689,23 +625,22 @@ li {
 .form input, .form textarea {
   font-size: 1rem;
   line-height: 2rem;
-  padding-left: 5px;
+  padding-left: 10px;
   color: #FFFFFF;
   border: none;
   border: 1px solid #FFFFFF;
   background: rgba(0, 0, 0, 0);
   z-index: 1;
+  width: 100%;
+  height: 50px;
+  font-family: "Work Sans", sans-serif;
+  position: relative;
 }
 
 .form textarea {
-  position: relative;
-  z-index: 1;
-  font-family: "Work Sans", sans-serif;
-  width: 100%;
   height: 110px;
   resize: none;
   padding-top: 5px;
-  margin-top:3px;
 }
 
 .form textarea:focus, .form input:focus {
@@ -715,14 +650,15 @@ li {
 .form .tooltip {
   position: absolute;
   color: #FFFFFF;
-  right: 5px;
+  right: 10px;
   top: 0;
   opacity: 0;
   transition: 0.2s;
   font-size: 0.8rem;
   line-height: 15px;
 }
-.msg-div .msg {
+.msg-div .msg,
+.field .email {
   height: 50px;
   line-height: 50px;
   top: 0;
@@ -733,17 +669,25 @@ li {
   top: 0;
 }
 
-.form p.msg.swoosh {
-  top: -5px;
+.form p.msg.swoosh,
+.form p.email.swoosh {
+  top: -8px;
   font-size: 0.8rem;
   line-height: 15px;
   height: 15px;
   z-index: 15;
+  margin-left: 4px;
 }
 .form p.msg.swoosh span {
-  background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #344D84, #38538F);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #344D84, #38538F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #324C83;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #324C83, #38538F);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #324C83, #38538F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0 2px;
+}
+.form p.email.swoosh span {
+  background: #2D4678;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #2D4678, #2F487C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2D4678, #2F487C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 0 2px;
 }
 
@@ -753,7 +697,6 @@ li {
 
 .footer {
   padding: 30px 0;
-  display: grid;
   background: #212121;
   color: #FFFFFF;
   font-weight: 300;
@@ -860,22 +803,16 @@ li {
   display: none;
 }
 .form {
-  grid-template-columns: 1fr;
   font-size: 1.3rem;
   line-height: 1.8rem;
-  grid-gap: 0;
 }
 .form > *, .form #button {
-  grid-column: 1/2;
   width: 100%;
   max-width:500px;
   margin:0 auto;
 }
 .form #button {
   width: unset;
-}
-.form .type-div div {
-  grid-template-columns: 1fr 1fr;
 }
 
 .footer-link,
@@ -975,12 +912,15 @@ body .cc-bottom {
     width: 25px;
   }
 }
-@media screen and (max-width: 754px) {
+@media screen and (max-width: 739px) {
   .about-flex .portfolio-image {
     order: 2;
   }
   .about-flex .summary {
     order: 1;
+  }
+  .portfolio-image {
+    margin-top: 50px;
   }
 }
 @media screen and (max-width: 720px) {
@@ -1007,7 +947,26 @@ body .cc-bottom {
   }
   body .cc-revoke,body .cc-window {
     font-size: 12px;
-}
+  }
+  :root {
+    font-size: 14px;
+  }
+  #down-arrow {
+    width: 75px;
+  }
+  .about h2,
+  .close h2,
+  .contact h2,
+  .summary h2 {
+    padding-bottom:25px;
+  }
+  .portfolio-image {
+    margin-top: 25px;
+  }
+  .flex-nav li a,
+  .list li a {
+    font-size: 1.2rem;
+  }
 }
 @media screen and (max-width: 690px) {
   .arrow-image {
@@ -1074,9 +1033,6 @@ body .cc-bottom {
   }
 }
 @media screen and (max-width: 480px) {
-  .form .type-div div {
-    grid-template-columns: 1.5fr 2fr;
-  }
   .sub-header-hero-text {
     font-size: 1.2em;
   }
@@ -1112,9 +1068,9 @@ body .cc-bottom {
     width: 2100px
   }
   .info-box {
-    left: 10px;
-    width: 280px;
-    padding: 25px 10px;
+    left: 25px;
+    width: 250px;
+    padding: 25px;
   }
 }
 @media screen and (max-width: 360px) {

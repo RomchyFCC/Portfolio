@@ -1,6 +1,5 @@
 $(document).ready(() => {
   // variables
-  const linkButton = document.querySelectorAll('.linkTo');
   const button = $('#stickyButton');
   const instagram = $('#instaSticky');
   const linked = $('#linkedSticky');
@@ -9,7 +8,6 @@ $(document).ready(() => {
   const currentYear = new Date().getFullYear();
   const navHeight = $('.normal-nav').outerHeight(true);
   const animationDuration = 1000;
-  const anchor = document.querySelectorAll(".dot");
   const display = document.getElementById('projectsDisplay');
   var globalLimitForProjects;
   var elementLength;
@@ -49,7 +47,6 @@ $(document).ready(() => {
   const textarea = $('.form textarea');
   const inputEmail = $('input[name="email"]');
 
-  const input = document.querySelectorAll('form');
   const pMail = document.querySelector('.email');
   const pMsg = document.querySelector('.msg');
 
@@ -177,7 +174,7 @@ $(document).ready(() => {
   });
 
   // scrolling switch for navigation buttons
-  linkButton.forEach(link => link.addEventListener('click', (e) => {
+  $('.linkTo').each((key,link) => link.addEventListener('click', (e) => {
     e.preventDefault();
     switch(link.innerHTML) {
       case 'About me':
@@ -205,9 +202,9 @@ $(document).ready(() => {
   $('.dot').on('click', e => swoop(e));
 
   // event listeners for input field in the contact section
-  input.forEach(item => item.addEventListener('keyup', e => checkLength(e)));
-  input.forEach(item => item.addEventListener('focusin', e => swoosh(e)));
-  input.forEach(item => item.addEventListener('focusout', e => swooshRemove(e)));
+  $('form').each((key,item) => item.addEventListener('keyup', e => checkLength(e)));
+  $('form').each((key,item) => item.addEventListener('focusin', e => swoosh(e)));
+  $('form').each((key,item) => item.addEventListener('focusout', e => swooshRemove(e)));
 
   // navbar event listener
   window.addEventListener("scroll", debounce(checkNav, 10));
@@ -444,15 +441,15 @@ $(document).ready(() => {
       if (parseInt(display.style.left) < 0) {
         display.style.left = (parseInt(display.style.left) + elementLength)+'px';
         dotInt = parseInt($('.picked-dot').attr('id').charAt(3))-1;
-        anchor.forEach(anch => {
+        $('.dot').each((key, anch) => {
           anch.classList.remove('picked-dot');
         });
         $('#dot'+dotInt).addClass('picked-dot')
       } else if (parseInt(display.style.left) === 0) {
         display.style.left = globalLimitForProjects+'px';
-        anchor.forEach((anch, key) => {
+        $('.dot').each((key, anch) => {
           anch.classList.remove('picked-dot');
-          if (key === anchor.length - 1) {
+          if (key === $('.dot').length - 1) {
             if (twoElems) {
               $('#dot'+(key - 1)).addClass('picked-dot')
             } else  if (oneElem) {
@@ -468,13 +465,13 @@ $(document).ready(() => {
       if (parseInt(display.style.left) > globalLimitForProjects) {
         display.style.left = (parseInt(display.style.left) - elementLength)+'px';
         dotInt = parseInt($('.picked-dot').attr('id').charAt(3))+1;
-        anchor.forEach(anch => {
+        $('.dot').each((key, anch) => {
           anch.classList.remove('picked-dot');
         });
         $('#dot'+dotInt).addClass('picked-dot')
       } else if (parseInt(display.style.left) === globalLimitForProjects) {
         display.style.left = '0';
-        anchor.forEach(anch => {
+        $('.dot').each((key, anch) => {
           anch.classList.remove('picked-dot');
         });
         $('#dot1').addClass('picked-dot')
@@ -489,15 +486,15 @@ $(document).ready(() => {
       if (parseInt(display.style.left) < 0) {
         display.style.left = (parseInt(display.style.left) + elementLength)+'px';
         dotInt = parseInt($('.picked-dot').attr('id').charAt(3))-1;
-        anchor.forEach(anch => {
+        $('.dot').each((key, anch) => {
           anch.classList.remove('picked-dot');
         });
         $('#dot'+dotInt).addClass('picked-dot')
       } else if (parseInt(display.style.left) === 0) {
         display.style.left = globalLimitForProjects+'px';
-        anchor.forEach((anch, key) => {
+        $('.dot').each((key, anch) => {
           anch.classList.remove('picked-dot');
-          if (key === anchor.length - 1) {
+          if (key === $('.dot').length - 1) {
             if (twoElems) {
               $('#dot'+(key - 1)).addClass('picked-dot')
             } else if (oneElem) {
@@ -513,13 +510,13 @@ $(document).ready(() => {
       if (parseInt(display.style.left) > globalLimitForProjects) {
         display.style.left = (parseInt(display.style.left) - elementLength)+'px';
         dotInt = parseInt($('.picked-dot').attr('id').charAt(3))+1;
-        anchor.forEach(anch => {
+        $('.dot').each((key, anch) => {
           anch.classList.remove('picked-dot');
         });
         $('#dot'+dotInt).addClass('picked-dot')
       } else if (parseInt(display.style.left) === globalLimitForProjects) {
         display.style.left = '0';
-        anchor.forEach(anch => {
+        $('.dot').each((key, anch) => {
           anch.classList.remove('picked-dot');
         });
         $('#dot1').addClass('picked-dot')
@@ -528,7 +525,7 @@ $(document).ready(() => {
   }
   // function for switching projects by clicking on the dots below
   function swoop(e) {
-    anchor.forEach(anch => {
+    $('.dot').each((key, anch) => {
       anch.classList.remove('picked-dot');
     });
 

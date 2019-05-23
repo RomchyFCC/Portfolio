@@ -2,7 +2,6 @@
 
 $(document).ready(function () {
   // variables
-  var linkButton = document.querySelectorAll('.linkTo');
   var button = $('#stickyButton');
   var instagram = $('#instaSticky');
   var linked = $('#linkedSticky');
@@ -11,7 +10,6 @@ $(document).ready(function () {
   var currentYear = new Date().getFullYear();
   var navHeight = $('.normal-nav').outerHeight(true);
   var animationDuration = 1000;
-  var anchor = document.querySelectorAll(".dot");
   var display = document.getElementById('projectsDisplay');
   var globalLimitForProjects;
   var elementLength;
@@ -51,7 +49,6 @@ $(document).ready(function () {
   var submitedBefore = false;
   var textarea = $('.form textarea');
   var inputEmail = $('input[name="email"]');
-  var input = document.querySelectorAll('form');
   var pMail = document.querySelector('.email');
   var pMsg = document.querySelector('.msg');
   $("#form").submit(function (event) {
@@ -195,7 +192,7 @@ $(document).ready(function () {
     }
   }); // scrolling switch for navigation buttons
 
-  linkButton.forEach(function (link) {
+  $('.linkTo').each(function (key, link) {
     return link.addEventListener('click', function (e) {
       e.preventDefault();
 
@@ -241,17 +238,17 @@ $(document).ready(function () {
     return swoop(e);
   }); // event listeners for input field in the contact section
 
-  input.forEach(function (item) {
+  $('form').each(function (key, item) {
     return item.addEventListener('keyup', function (e) {
       return checkLength(e);
     });
   });
-  input.forEach(function (item) {
+  $('form').each(function (key, item) {
     return item.addEventListener('focusin', function (e) {
       return swoosh(e);
     });
   });
-  input.forEach(function (item) {
+  $('form').each(function (key, item) {
     return item.addEventListener('focusout', function (e) {
       return swooshRemove(e);
     });
@@ -567,16 +564,16 @@ $(document).ready(function () {
       if (parseInt(display.style.left) < 0) {
         display.style.left = parseInt(display.style.left) + elementLength + 'px';
         dotInt = parseInt($('.picked-dot').attr('id').charAt(3)) - 1;
-        anchor.forEach(function (anch) {
+        $('.dot').each(function (key, anch) {
           anch.classList.remove('picked-dot');
         });
         $('#dot' + dotInt).addClass('picked-dot');
       } else if (parseInt(display.style.left) === 0) {
         display.style.left = globalLimitForProjects + 'px';
-        anchor.forEach(function (anch, key) {
+        $('.dot').each(function (key, anch) {
           anch.classList.remove('picked-dot');
 
-          if (key === anchor.length - 1) {
+          if (key === $('.dot').length - 1) {
             if (twoElems) {
               $('#dot' + (key - 1)).addClass('picked-dot');
             } else if (oneElem) {
@@ -593,13 +590,13 @@ $(document).ready(function () {
       if (parseInt(display.style.left) > globalLimitForProjects) {
         display.style.left = parseInt(display.style.left) - elementLength + 'px';
         dotInt = parseInt($('.picked-dot').attr('id').charAt(3)) + 1;
-        anchor.forEach(function (anch) {
+        $('.dot').each(function (key, anch) {
           anch.classList.remove('picked-dot');
         });
         $('#dot' + dotInt).addClass('picked-dot');
       } else if (parseInt(display.style.left) === globalLimitForProjects) {
         display.style.left = '0';
-        anchor.forEach(function (anch) {
+        $('.dot').each(function (key, anch) {
           anch.classList.remove('picked-dot');
         });
         $('#dot1').addClass('picked-dot');
@@ -616,16 +613,16 @@ $(document).ready(function () {
       if (parseInt(display.style.left) < 0) {
         display.style.left = parseInt(display.style.left) + elementLength + 'px';
         dotInt = parseInt($('.picked-dot').attr('id').charAt(3)) - 1;
-        anchor.forEach(function (anch) {
+        $('.dot').each(function (key, anch) {
           anch.classList.remove('picked-dot');
         });
         $('#dot' + dotInt).addClass('picked-dot');
       } else if (parseInt(display.style.left) === 0) {
         display.style.left = globalLimitForProjects + 'px';
-        anchor.forEach(function (anch, key) {
+        $('.dot').each(function (key, anch) {
           anch.classList.remove('picked-dot');
 
-          if (key === anchor.length - 1) {
+          if (key === $('.dot').length - 1) {
             if (twoElems) {
               $('#dot' + (key - 1)).addClass('picked-dot');
             } else if (oneElem) {
@@ -642,13 +639,13 @@ $(document).ready(function () {
       if (parseInt(display.style.left) > globalLimitForProjects) {
         display.style.left = parseInt(display.style.left) - elementLength + 'px';
         dotInt = parseInt($('.picked-dot').attr('id').charAt(3)) + 1;
-        anchor.forEach(function (anch) {
+        $('.dot').each(function (key, anch) {
           anch.classList.remove('picked-dot');
         });
         $('#dot' + dotInt).addClass('picked-dot');
       } else if (parseInt(display.style.left) === globalLimitForProjects) {
         display.style.left = '0';
-        anchor.forEach(function (anch) {
+        $('.dot').each(function (key, anch) {
           anch.classList.remove('picked-dot');
         });
         $('#dot1').addClass('picked-dot');
@@ -658,7 +655,7 @@ $(document).ready(function () {
 
 
   function swoop(e) {
-    anchor.forEach(function (anch) {
+    $('.dot').each(function (key, anch) {
       anch.classList.remove('picked-dot');
     });
     e.target.classList.add('picked-dot');
