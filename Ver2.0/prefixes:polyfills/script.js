@@ -49,11 +49,9 @@ $(document).ready(function () {
   var submitedBefore = false;
   var textarea = $('.form textarea');
   var inputEmail = $('input[name="email"]');
-  var pMail = document.querySelector('.email');
-  var pMsg = document.querySelector('.msg');
   $("#form").submit(function (event) {
     event.preventDefault();
-    error = false;
+    var error = false;
     var email = inputEmail.val();
 
     if (email.length < 1) {
@@ -181,7 +179,7 @@ $(document).ready(function () {
     $('#gitSticky').addClass('scroll-more');
     $('#resumeSticky').addClass('scroll-more');
 
-    if (window.scrollY < 250 && !$('#burger-container').hasClass('open')) {
+    if (window.pageYOffset < 250 && !$('#burger-container').hasClass('open')) {
       $('.normal-nav').removeClass('scroll');
       $('#shareClose').removeClass('scroll-more');
       $('#stickyButton').removeClass('scroll-more');
@@ -351,7 +349,7 @@ $(document).ready(function () {
   }
 
   function checkFooter() {
-    if (window.scrollY + window.outerHeight >= $(document).height() * 0.9 && clickedShare === false) {
+    if (window.pageYOffset + window.outerHeight >= $(document).height() * 0.9 && clickedShare === false) {
       $('#stickyFooter').removeClass('hide');
     } else {
       $('#stickyFooter').addClass('hide');
@@ -396,7 +394,7 @@ $(document).ready(function () {
 
 
   function checkNav() {
-    if (window.scrollY >= 250 || $('#burger-container').hasClass('open')) {
+    if (window.pageYOffset >= 250 || $('#burger-container').hasClass('open')) {
       $('.normal-nav').addClass('scroll');
       $('#shareClose').addClass('scroll-more');
       $('#stickyButton').addClass('scroll-more');
@@ -696,11 +694,11 @@ $(document).ready(function () {
 
   function swoosh(e) {
     if (e.target.name === 'email') {
-      pMail.classList.add('swoosh');
+      $('.email').addClass('swoosh');
     }
 
     if (e.target.name === 'comment') {
-      pMsg.classList.add('swoosh');
+      $('.msg').addClass('swoosh');
     }
   } // removing swoosh class from paragraph element of the form
 
@@ -708,11 +706,11 @@ $(document).ready(function () {
   function swooshRemove(e) {
     if (e.target.value === '') {
       if (e.target.name === 'email') {
-        pMail.classList.remove('swoosh');
+        $('.email').removeClass('swoosh');
       }
 
       if (e.target.name === 'comment') {
-        pMsg.classList.remove('swoosh');
+        $('.msg').removeClass('swoosh');
       }
     }
   } // courtesy of stack overflow

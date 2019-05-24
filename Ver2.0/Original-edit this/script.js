@@ -46,13 +46,9 @@ $(document).ready(() => {
 
   const textarea = $('.form textarea');
   const inputEmail = $('input[name="email"]');
-
-  const pMail = document.querySelector('.email');
-  const pMsg = document.querySelector('.msg');
-
   $("#form").submit(function(event) {
     event.preventDefault();
-    error = false;
+    var error = false;
 
     var email = inputEmail.val();
     if (email.length < 1) {
@@ -162,7 +158,7 @@ $(document).ready(() => {
     $('#linkedSticky').addClass('scroll-more');
     $('#gitSticky').addClass('scroll-more');
     $('#resumeSticky').addClass('scroll-more');
-    if (window.scrollY < 250 && !$('#burger-container').hasClass('open')) {
+    if (window.pageYOffset < 250 && !$('#burger-container').hasClass('open')) {
       $('.normal-nav').removeClass('scroll');
       $('#shareClose').removeClass('scroll-more');
       $('#stickyButton').removeClass('scroll-more');
@@ -272,7 +268,7 @@ $(document).ready(() => {
   }
 
   function checkFooter() {
-    if (window.scrollY + window.outerHeight >= $(document).height() * 0.9 && clickedShare === false) {
+    if (window.pageYOffset + window.outerHeight >= $(document).height() * 0.9 && clickedShare === false) {
       $('#stickyFooter').removeClass('hide');
     } else {
       $('#stickyFooter').addClass('hide');
@@ -319,7 +315,7 @@ $(document).ready(() => {
 
   // function controlling navbar's opacity
   function checkNav() {
-    if (window.scrollY >= 250 || $('#burger-container').hasClass('open')) {
+    if (window.pageYOffset >= 250 || $('#burger-container').hasClass('open')) {
       $('.normal-nav').addClass('scroll');
       $('#shareClose').addClass('scroll-more');
       $('#stickyButton').addClass('scroll-more');
@@ -559,10 +555,10 @@ $(document).ready(() => {
   // adding swoosh class to paragraph element of the form
   function swoosh (e) {
     if (e.target.name === 'email') {
-      pMail.classList.add('swoosh')
+      $('.email').addClass('swoosh');
     }
     if (e.target.name === 'comment') {
-      pMsg.classList.add('swoosh')
+      $('.msg').addClass('swoosh');
     }
   }
 
@@ -570,10 +566,10 @@ $(document).ready(() => {
   function swooshRemove (e) {
     if (e.target.value === '') {
       if (e.target.name === 'email') {
-        pMail.classList.remove('swoosh')
+        $('.email').removeClass('swoosh');
       }
       if (e.target.name === 'comment') {
-        pMsg.classList.remove('swoosh')
+        $('.msg').removeClass('swoosh');
       }
     }
   }

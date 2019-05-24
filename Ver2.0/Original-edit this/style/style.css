@@ -59,6 +59,7 @@ li {
 .normal-nav ul.list {
   justify-self: flex-end;
   font-weight: 300;
+  margin-left: auto;
 }
 
 .normal-nav ul.list a:hover {
@@ -107,6 +108,7 @@ li {
   justify-self: flex-end;
   height: 50px;
   display: none;
+  margin-left: auto;
 }
 
 #burger {
@@ -154,6 +156,7 @@ li {
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   justify-content: space-evenly;
 }
 
@@ -368,6 +371,8 @@ li {
   align-self: center;
   cursor: pointer;
   width:50px;
+  flex: 1 0 50px;
+  max-width: 50px;
 }
 .projects .left-arrow {
   margin-right: 50px;
@@ -377,7 +382,7 @@ li {
 }
 
 .elements {
-  flex:1 0 300px;
+  flex:1 0 500px;
   justify-content: center;
   max-width: 500px;
   position: relative;
@@ -868,6 +873,7 @@ body .cc-bottom {
   }
   .elements {
     max-width: 1060px;
+    flex:1 0 1060px;
   }
   .element {
     margin: 0 15px;
@@ -910,6 +916,8 @@ body .cc-bottom {
   }
   .projects .left-arrow, .projects .right-arrow {
     width: 25px;
+    flex: 1 0 25px;
+    max-width: 25px;
   }
 }
 @media screen and (max-width: 739px) {
@@ -951,6 +959,10 @@ body .cc-bottom {
   :root {
     font-size: 14px;
   }
+  input,
+  textarea {
+    font-size: 16px !important;
+  }
   #down-arrow {
     width: 75px;
   }
@@ -981,6 +993,7 @@ body .cc-bottom {
     display: flex;
     align-content: center;
     height: 400px;
+    max-width: 50px;
   }
   .projects .left-arrow {
     margin-right: -50px;
@@ -990,6 +1003,7 @@ body .cc-bottom {
     display: flex;
     align-content: center;
     height: 400px;
+    max-width: 50px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -1013,6 +1027,7 @@ body .cc-bottom {
   }
   .elements {
     max-width: 350px;
+    flex:1 0 350px;
   }
   .element {
     max-width: 350px;
@@ -1046,10 +1061,6 @@ body .cc-bottom {
   .hero .list li {
     padding: 0 5px;
   }
-  .contact .form, .form input, .form textarea {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
   .form p.swoosh {
     top: 5px;
   }
@@ -1060,6 +1071,7 @@ body .cc-bottom {
   }
   .elements {
     max-width: 300px;
+    flex:1 0 300px;
   }
   .element {
     max-width: 300px;
