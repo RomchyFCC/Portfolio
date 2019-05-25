@@ -326,18 +326,18 @@ li {
 .picked-dot {
   background: #FFFFFF;
 }
-#dot8 {
+#dot6 {
   background: rgba(255, 0, 0, 0.3);
 }
-#dot8.picked-dot,
-#dot8:hover {
+#dot6.picked-dot,
+#dot6:hover {
   background: red;
 }
-.dot8 {
+.dot6 {
   background: rgba(255, 0, 0, 0.3);
 }
-.dot8.picked-dot,
-.dot8:hover {
+.dot6.picked-dot,
+.dot6:hover {
   background: red;
 }
 .projects {
@@ -393,7 +393,7 @@ li {
 
 .elements-two {
   display: flex;
-  width: 3500px;
+  width: 2500px;
   position: relative;
   left:0;
   height: 100%;
@@ -879,7 +879,7 @@ body .cc-bottom {
     margin: 0 15px;
   }
   .elements-two {
-    width: 3710px;
+    width: 2650px;
   }
   .left-arrow {
     margin-right: 25px;
@@ -1033,7 +1033,7 @@ body .cc-bottom {
     max-width: 350px;
   }
   .elements-two {
-    width: 2450px
+    width: 1750px
   }
   .info-box {
     left: 25px;
@@ -1077,7 +1077,7 @@ body .cc-bottom {
     max-width: 300px;
   }
   .elements-two {
-    width: 2100px
+    width: 1500px
   }
   .info-box {
     left: 25px;

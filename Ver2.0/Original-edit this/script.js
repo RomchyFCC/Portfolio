@@ -16,20 +16,20 @@ $(document).ready(() => {
   if (window.innerWidth < 1350) {
     if (window.innerWidth < 520) {
       if (window.innerWidth < 365) {
-        globalLimitForProjects = -1800
+        globalLimitForProjects = -1200
         elementLength = 300;
       } else {
-        globalLimitForProjects = -2100
+        globalLimitForProjects = -1400
         elementLength = 350;
       }
     } else {
       elementLength = 500;
-      globalLimitForProjects = -3000;
+      globalLimitForProjects = -2000;
     }
   } else {
-    globalLimitForProjects = -2650;
+    globalLimitForProjects = -1590;
     elementLength = 530;
-    $('#dot7').addClass('hide');
+    $('#dot5').addClass('hide');
     twoElems = true;
   }
   var wait = false;
@@ -61,7 +61,7 @@ $(document).ready(() => {
     if (error) {
       return;
     } else {
-      $('submitText').addClass('hide');
+      $('#submitText').addClass('hide');
       $('#submitImage').removeClass('hide');
       $('#button').attr('disabled', true);
       $('#button').css('cursor', 'wait');
@@ -89,11 +89,11 @@ $(document).ready(() => {
             $('#contact3').animate({'opacity': 1, 'left': 0}, animationDuration/4);
             textarea.val('');
           }
-          $('submitText').removeClass('hide');
+          $('#submitText').removeClass('hide');
           $('#submitImage').addClass('hide');
           $('#button').css('cursor', 'not-allowed');
         } else {
-          $('submitText').removeClass('hide');
+          $('#submitText').removeClass('hide');
           $('#submitImage').addClass('hide');
           $('#button').attr('disabled', false);
           $('#button').css('cursor', 'pointer');
@@ -355,26 +355,26 @@ $(document).ready(() => {
   // function that creates an animation for elements when the user hovers over the element window
   function onhover(numberInSpanish) {
     switch (numberInSpanish) {
-      case 'Uno':
+      /* case 'Uno':
         checked1 = true;
         break;
       case 'Dos':
         checked2 = true;
-        break;
+        break; */
       case 'Tres':
-        checked3 = true;
+        checked1 = true;
         break;
       case 'Quatro':
-        checked4 = true;
+        checked2 = true;
         break;
       case 'Cinco':
-        checked5 = true;
+        checked3 = true;
         break;
       case 'Seis':
-        checked6 = true;
+        checked4 = true;
         break;
       case 'Siete':
-        checked7 = true;
+        checked5 = true;
         break;
       default:
         break;
@@ -388,28 +388,28 @@ $(document).ready(() => {
       $('#project'+numberInSpanish+' .element-image').animate({'opacity': 1}, animationDuration/4);
       $('#project'+numberInSpanish+' .info-box').animate({'background': '#fff', 'opacity': 1}, animationDuration/4);
     }
-    if (checked1 === true && checked2 === true && checked3 === true && checked4 === true && checked5 === true && checked6 === true && checked7 === true) {
+    if (checked1 === true && checked2 === true && checked3 === true && checked4 === true && checked5 === true /* && checked6 === true && checked7 === true */) {
       if (window.innerWidth < 1350) {
         oneElem = true;
         if (window.innerWidth < 520) {
           if (window.innerWidth < 365) {
-            $('#projectsDisplay').css({'width': '2400px'});
-            globalLimitForProjects = -2100;
+            $('#projectsDisplay').css({'width': '1800px'});
+            globalLimitForProjects = -1500;
           } else {
-            $('#projectsDisplay').css({'width': '2800px'});
-            globalLimitForProjects = -2450;
+            $('#projectsDisplay').css({'width': '2100px'});
+            globalLimitForProjects = -1750;
           }
         } else {
-          $('#projectsDisplay').css({'width': '4000px'});
-          globalLimitForProjects = -3500;
+          $('#projectsDisplay').css({'width': '3000px'});
+          globalLimitForProjects = -2500;
         }
         
-        $('#dot8').removeClass('hide');
+        $('#dot6').removeClass('hide');
       } else {
-        $('#dot7').addClass('dot8');
-        $('#dot7').removeClass('hide');
-        globalLimitForProjects = -3180;
-        $('#projectsDisplay').css({'width': '4240px'});
+        $('#dot5').addClass('dot6');
+        $('#dot5').removeClass('hide');
+        globalLimitForProjects = -2120;
+        $('#projectsDisplay').css({'width': '3180px'});
         twoElems = false;
       }
       $('#projectOcho').removeClass('hide');
@@ -544,12 +544,12 @@ $(document).ready(() => {
     if (e.target.id == 'dot6') {
       display.style.left = "-"+(elementLength*5)+"px";
     }
-    if (e.target.id == 'dot7') {
+/*     if (e.target.id == 'dot7') {
       display.style.left = "-"+(elementLength*6)+"px";
     }
     if (e.target.id == 'dot8') {
       display.style.left = "-"+(elementLength*7)+"px";
-    }
+    } */
   }
 
   // adding swoosh class to paragraph element of the form
