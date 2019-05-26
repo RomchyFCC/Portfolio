@@ -668,7 +668,8 @@ body .form #button {
   line-height: 50px;
   top: 0;
   position: absolute;
-  width: 100%;
+  width: 99%;
+  left:9px;
 }
 .form p.swoosh {
   top: 0;
@@ -681,7 +682,7 @@ body .form #button {
   line-height: 15px;
   height: 15px;
   z-index: 15;
-  margin-left: 4px;
+  margin-left: -4px;
 }
 .form p.msg.swoosh span {
   background: #324C83;  /* fallback for old browsers */
